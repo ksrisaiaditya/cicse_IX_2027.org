@@ -1,0 +1,4087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+    <title>CISCE CLASS – IX BOARD WEBSITE </title>
+    <style>
+        /* Multi-Color Dynamic Theme Matrix (Emphasizing Green Types with Mix of Ultra Colors & Minimal Black) */
+        :root {
+            /* Main Green Palette Types */
+            --green-emerald: #10b981;
+            --green-forest: #059669;
+            --green-mint: #d1fae5;
+            --green-dark: #064e3b;
+            --green-vibrant: #22c55e;
+            --green-lime: #84cc16;
+
+            /* Vibrant Rainbow Ultra Colors */
+            --cisce-primary-dark: #064e3b; /* Deep Forest Green instead of Black */
+            --cisce-navy-deep: #1e1b4b; /* Deep Indigo-Blue */
+            --cisce-blue-mid: #2563eb; /* Vibrant Blue */
+            --cisce-blue-glow: #60a5fa;
+            --color-violet: #8b5cf6;
+            --color-indigo: #4338ca;
+            --color-red: #ef4444;
+            --color-orange: #f97316;
+            --color-yellow: #eab308;
+            
+            /* Metallic Gold & Silver Accent Spectrum */
+            --cisce-accent-gold: #f59e0b;
+            --cisce-gold-bright: #fbbf24;
+            --cisce-gold-muted: #d97706;
+            --cisce-gold-glow: rgba(245, 158, 11, 0.25);
+            --metallic-silver: #e2e8f0;
+            --metallic-silver-glow: rgba(226, 232, 240, 0.6);
+
+            /* Light & Ultra Colorful Surface Cards */
+            --surface-bg-light: #f0fdf4; /* Light Mint Tint */
+            --surface-card: #ffffff;
+            --text-primary: #064e3b; /* Emerald Deep Dark Green Text */
+            --text-secondary: #1e3a8a; /* Deep Blue Text */
+            --text-muted: #047857; /* Medium Forest Green */
+
+            /* State Indicators */
+            --state-success: #16a34a;
+            --state-success-bg: #dcfce7;
+            --state-error: #dc2626;
+            --state-error-bg: #fee2e2;
+            --state-info: #0284c7;
+            --state-info-bg: #e0f2fe;
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+            --shadow-md: 0 10px 25px -5px rgba(5, 150, 105, 0.15);
+            --shadow-lg: 0 20px 40px -15px rgba(6, 78, 59, 0.25);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Subject Dynamic Color Palette */
+            --sub-lang: #0284c7;
+            --sub-lit: #8b5cf6;
+            --sub-math: #ef4444;
+            --sub-sci: #10b981;
+            --sub-hum: #f97316;
+            --sub-comp: #14b8a6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--surface-bg-light);
+            color: var(--text-primary);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.8;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Government Bar - Rich Green & Gold Gradient */
+        .super-bar {
+            background: linear-gradient(90deg, #064e3b 0%, #047857 50%, #065f46 100%);
+            color: #ffffff;
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--cisce-gold-bright);
+        }
+
+        .super-bar-left {
+            display: flex;
+            gap: 20px;
+        }
+
+        .super-link {
+            color: var(--cisce-gold-bright);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .super-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px var(--cisce-gold-bright);
+        }
+
+        /* Modern Colorful Ultra Header */
+        header {
+            background: linear-gradient(135deg, #064e3b 0%, #1e1b4b 35%, #4338ca 70%, #059669 100%);
+            color: #ffffff;
+            padding: 40px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 6px solid var(--cisce-gold-bright);
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            flex-wrap: wrap;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, rgba(139, 92, 246, 0.2) 50%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header-main-block {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            z-index: 2;
+        }
+        .brand-text{
+    width:100%;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+        .brand-text h1 {
+            font-size: 50px;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #a7f3d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .brand-text p {
+            color: var(--cisce-gold-bright);
+            font-size: 50px;
+            text-align: center;
+            margin-top: 8px;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(245, 158, 11, 0.5);
+        }
+
+        .header-meta-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 2px solid var(--cisce-gold-bright);
+            padding: 15px 35px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-left: auto;
+            box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.3);
+            z-index: 2;
+        }
+
+        @media (max-width: 900px) {
+            .header-meta-badge {
+                margin-left: 0;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .header-meta-badge .cycle-year {
+            font-size: 45px;
+            font-weight: 900;
+            color: var(--cisce-gold-bright);
+            display: block;
+            line-height: 1;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .header-meta-badge .cycle-lbl {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #ffffff;
+            opacity: 0.95;
+            margin-top: 4px;
+        }
+
+        /* Multi-Color Rainbow Sticky Navigation Bar */
+        nav {
+            background: linear-gradient(90deg, #064e3b 0%, #1e1b4b 25%, #2563eb 50%, #7c3aed 75%, #059669 100%);
+            backdrop-filter: blur(12px);
+            padding: 5px 8%;
+            display: flex;
+            overflow-x: auto;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 950;
+            border-bottom: 3px solid var(--cisce-gold-bright);
+        }
+
+        nav::-webkit-scrollbar {
+            height: 6px;
+        }
+        nav::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981, #3b82f6);
+            border-radius: 4px;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            padding: 22px 30px;
+            font-size: 20px;
+            font-weight: 800;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-bottom: 4px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        nav button:hover, nav button.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--cisce-gold-bright);
+            border-bottom: 4px solid var(--cisce-gold-bright);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        /* Dynamic Live Utility & Search Toolbar (NEW FEATURE) */
+        .utility-bar {
+            max-width: 1440px;
+            width: 100%;
+            margin: 20px auto 0 auto;
+            padding: 0 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .tool-btn {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #047857, #059669);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Floating Bottom-Right Top Arrow Button */
+        .floating-top-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            width: 0px;
+            height: 0px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #ffffff;
+            border: 1px solid var(--cisce-gold-bright);
+            border-radius: 0%;
+            font-size: 70px;
+            font-weight: 1000;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-smooth);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-top-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: linear-gradient(135deg, #047857, #059669);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Enhanced Broadcast Ticker System - Red/Orange/Yellow Vibrant Gradient */
+        .marquee-strip {
+            background: linear-gradient(90deg, #f59e0b 0%, #ef4444 33%, #8b5cf6 66%, #10b981 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: 800;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee-label {
+            background-color: #064e3b;
+            color: var(--cisce-gold-bright);
+            padding: 12px 24px;
+            text-transform: uppercase;
+            font-size: 25px;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .marquee-label::before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            background-color: #ef4444;
+            border-radius: 60%;
+            display: inline-block;
+            animation: pulse-red 0.125s infinite;
+        }
+
+        .ticker-viewport {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            padding-left: 20px;
+        }
+
+        .ticker-track {
+            display: inline-block;
+            padding-left: 100%;
+            animation: modern-ticker 50s linear infinite;
+            text-transform: uppercase;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes modern-ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        @keyframes pulse-red {
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* Dynamic Real-Time Dialogue Section */
+        .board-dialogue-section {
+            max-width: 1440px;
+            width: 100%;
+            margin: 30px auto 0 auto;
+            padding: 0 30px;
+        }
+
+        .dialogue-box {
+            background-color: var(--surface-card);
+            border-left: 8px solid var(--green-vibrant);
+            border-radius: var(--radius-md);
+            padding: 24px 30px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            border-top: 1px solid var(--green-mint);
+            border-right: 1px solid var(--green-mint);
+        }
+
+        .dialogue-box:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--color-orange);
+        }
+
+        .dialogue-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dialogue-title {
+            color: #064e3b;
+            font-size: 45px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dialogue-body {
+            font-size: 24px;
+            color: var(--text-primary);
+            font-weight: 700;
+            line-height: 1.6;
+            border-top: 2px solid var(--green-mint);
+            padding-top: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Layout Grid Framework */
+        .page-view {
+            display: none;
+            max-width: 1440px;
+            width: 100%;
+            margin: 30px auto 50px auto;
+            padding: 0 30px;
+            flex-grow: 1;
+        }
+
+        .page-view.active-view {
+            display: block;
+            animation: interface-slide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes interface-slide {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 35px;
+        }
+
+        @media (max-width: 1024px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Multi-Color Elevated Card Layouts */
+        .cisce-card {
+            background-color: var(--surface-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 10px solid #a7f3d0; /* Green accent outline */
+            margin-bottom: 35px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .cisce-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-orange);
+        }
+
+        .card-header {
+            text-align: center;
+            background: linear-gradient(135deg, #dcfce7 0%, #e0f2fe 50%, #fef3c7 100%);
+            padding: 24px 30px;
+            border-bottom: 3px solid var(--green-emerald);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h2 {
+            font-size: 30px;
+            color: #064e3b;
+            font-weight: 800;
+            position: relative;
+            padding-left: 16px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .card-header h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            height: 35px;
+            width: 6px;
+            background: linear-gradient(180deg, #10b981, #f59e0b);
+            border-radius: 5px;
+        }
+
+        /* Dynamic Feed System Components */
+        .feed-list {
+            list-style: none;
+            padding: 10px 30px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #announcement-container,
+        #notice-container,
+        #results-container,
+        #pyqp-container,
+        #qp2027-container {
+            max-height: 600px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        #announcement-container::-webkit-scrollbar,
+        #notice-container::-webkit-scrollbar,
+        #results-container::-webkit-scrollbar,
+        #pyqp-container::-webkit-scrollbar,
+        #qp2027-container::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .scrolling-wrapper {
+            display: flex;
+            flex-direction: column;
+            animation: continuousVerticalScroll 0s linear infinite;
+        }
+
+        .scrolling-wrapper:hover {
+            animation-play-state: paused;
+        }
+
+        .feed-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px 0;
+            border-bottom: 2px dashed #a7f3d0;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .feed-item:last-child {
+            border-bottom: none;
+        }
+
+        .feed-meta {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-weight: 800;
+            font-size: 12px;
+        }
+        .tag-notice { color: #dc2626; background: #fee2e2; border: 1px solid #fca5a5; }
+        .tag-announcement { color: #0284c7; background: #e0f2fe; border: 1px solid #7dd3fc; }
+        .tag-result { color: #15803d; background: #dcfce7; border: 1px solid #86efac; }
+        .tag-pyqp { color: #c2410c; background: #ffedd5; border: 1px solid #fdba74; }
+        .tag-draft { color: #4338ca; background: #e0e7ff; border: 1px solid #a5b4fc; }
+
+        .item-date {
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .item-date::before {
+            content: '🚨';
+            font-size: 18px;
+        }
+                .item-date::after {
+            content: '🚨';
+            font-size: 18px;
+        }
+
+        .feed-title-link {
+            display: block;
+            width: 100%;
+            color: #1e3a8a;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 1.5;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            transition: var(--transition-smooth);
+        }
+        
+        .mini-link{
+    margin-left:10px;
+    color:purple;
+    font-size:25px;
+    font-weight:900;
+    text-decoration:none;
+    display:inline-block;
+    animation:zoomInOut 0.25s ease-in-out infinite;
+}
+
+.mini-link:hover{
+    color:#059669;
+    text-decoration:underline;
+    animation-play-state:paused; /* Optional: pauses animation on hover */
+}
+
+@keyframes zoomInOut{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+        a.feed-title-link:hover {
+            color: var(--green-forest);
+            transform: translateX(4px);
+        }
+
+        span.feed-title-link {
+            cursor: default;
+            color: var(--text-primary);
+        }
+
+        .no-data-placeholder {
+            padding: 50px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 30px;
+            font-style: italic;
+        }
+
+        .inline-mgmt-ctrls {
+            display: none;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .action-mini-btn {
+            padding: 6px 14px;
+            font-size: 15px;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 800;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+        }
+        .btn-edit { background-color: #e0f2fe; color: #0284c7; border: 1px solid #38bdf8; }
+        .btn-edit:hover { background-color: #bae6fd; }
+        .btn-del { background-color: #fee2e2; color: #dc2626; border: 1px solid #f87171; }
+        .btn-del:hover { background-color: #fecdd3; }
+
+        /* Multi-Color Stat Dashboard Cards */
+        .metric-dashboard-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .metric-dashboard-strip {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric-node {
+            background: linear-gradient(135deg, #064e3b 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border-bottom: 10px solid var(--cisce-gold-bright);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+        }
+
+        .metric-node:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--green-lime);
+        }
+
+        .metric-node h4 {
+            font-size: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--cisce-gold-bright);
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .metric-node .metric-val {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        /* Static Page Content Styles */
+        .static-content {
+            background-color: var(--surface-card);
+            padding: 50px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 2px solid #a7f3d0;
+        }
+
+        @media (max-width: 768px) {
+            .static-content {
+                padding: 30px 20px;
+            }
+        }
+
+        .static-content h2 {
+            color: #064e3b;
+            margin-bottom: 25px;
+            border-bottom: 4px solid var(--green-emerald);
+            padding-bottom: 14px;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .static-content h3 {
+            color: #1e3a8a;
+            margin: 35px 0 16px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .static-content p {
+            margin-bottom: 24px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #064e3b;
+            text-align: justify;
+        }
+
+        .static-content ul {
+            margin-left: 25px;
+            margin-bottom: 30px;
+        }
+
+        .static-content li {
+            margin-bottom: 12px;
+            font-size: 18px;
+            color: #047857;
+            line-height: 1.7;
+        }
+
+        .static-content strong {
+            color: #064e3b;
+            font-weight: 800;
+        }
+
+        .info-block {
+            background: linear-gradient(135deg, #dcfce7 0%, #fef3c7 100%);
+            border-left: 8px solid var(--cisce-accent-gold);
+            padding: 24px;
+            margin: 30px 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .info-block strong {
+            color: #1e3a8a;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Colorful Subject Syllabus Accordion Cards */
+        .syllabus-subject-card {
+            border: 2px solid #a7f3d0;
+            margin-bottom: 20px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+
+        .syllabus-subject-card:hover {
+            border-color: var(--color-violet);
+            box-shadow: var(--shadow-md);
+        }
+
+        .syllabus-subject-card summary {
+            background: linear-gradient(135deg, #064e3b 0%, #1e1b4b 50%, #059669 100%);
+            color: #ffffff;
+            padding: 20px 28px;
+            font-size: 22px;
+            font-weight: 800;
+            cursor: pointer;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+
+        .syllabus-subject-card summary::after {
+            content: '🔻';
+            font-size: 40px;
+            color: var(--cisce-gold-bright);
+            transition: transform 0.3s ease;
+        }
+
+        .syllabus-subject-card[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .syllabus-inner-box {
+            padding: 25px;
+            background: #f0fdf4;
+            border-top: 4px solid var(--cisce-accent-gold);
+        }
+
+        .syllabus-unit {
+            background: #ffffff;
+            border-left: 6px solid var(--green-forest);
+            padding: 18px 22px;
+            margin-bottom: 16px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: var(--transition-smooth);
+        }
+
+        .syllabus-unit:hover {
+            transform: translateX(6px);
+            border-left-color: var(--color-orange);
+        }
+
+        .syllabus-unit h4 {
+            font-size: 20px;
+            color: #064e3b;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        /* Admin Management Area */
+        .admin-dashboard-wrapper {
+            display: none;
+            background-color: var(--surface-card);
+            border-radius: var(--radius-lg);
+            border: 3px solid var(--cisce-gold-bright);
+            padding: 40px;
+            margin: 30px auto 0 auto;
+            max-width: 1440px;
+            width: calc(100% - 60px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .admin-section-divider {
+            margin: 35px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px dashed var(--green-emerald);
+            color: #064e3b;
+            font-size: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #064e3b;
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #a7f3d0;
+            border-radius: var(--radius-md);
+            font-size: 20px;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+            background-color: #f0fdf4;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--green-forest);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-action {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #064e3b, #059669);
+            color: #FFFFFF;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 16px;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-action:hover {
+            background: linear-gradient(135deg, #047857, #10b981);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .flex-btn-cluster {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Modal Overlay Interface */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(6, 78, 59, 0.85);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .login-box {
+            background-color: var(--surface-card);
+            padding: 60px;
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 900px;
+            box-shadow: var(--shadow-lg);
+            border-top: 8px solid var(--cisce-gold-bright);
+        }
+
+        .login-box h3 {
+            color: #064e3b;
+            margin-bottom: 25px;
+            font-size: 40px;
+            text-align: center;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* Footer System Design */
+        footer {
+            background: linear-gradient(135deg, #064e3b 0%, #1e1b4b 50%, #047857 100%);
+            color: #ffffff;
+            padding: 60px 10% 30px;
+            margin-top: auto;
+            border-top: 6px solid var(--cisce-gold-bright);
+            font-size: 16px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            color: white;
+            font-size: 25px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .keyhole-trigger {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--cisce-gold-bright);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: 1000;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition-smooth);
+        }
+
+        .keyhole-trigger:hover {
+            color: #064e3b;
+            background-color: var(--cisce-gold-bright);
+            transform: translateY(-2px);
+        }
+
+        /* Text Uppercase Overrides */
+        #home-view h2, #home-view h3, #home-view p, #home-view li,
+        #about-view h2, #about-view h3, #about-view p, #about-view li,
+        #classix-view h2, #classix-view h3, #classix-view p, #classix-view li,
+        #resource-view h2, #resource-view h3, #resource-view p, #resource-view li,
+        #pyqp-view h2, #pyqp-view h3, #pyqp-view p, #pyqp-view li,
+        .info-block, .info-block strong {
+            text-transform: uppercase;
+        }
+
+        details {
+            margin: 20px 0;
+            border: 2px solid #a7f3d0;
+            border-radius: var(--radius-md);
+            padding: 18px;
+            background: #ffffff;
+            transition: var(--transition-smooth);
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 800;
+            color: #064e3b;
+        }
+
+        details p {
+            font-size: 20px;
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        #faq-view details {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px solid #a7f3d0;
+            border-radius: var(--radius-md);
+            background: #ffffff;
+        }
+
+        #faq-view summary {
+            font-size: 27px;
+            font-weight: 800;
+            cursor: pointer;
+            padding: 5px 0;
+        }
+
+        #faq-view details p {
+            margin-top: 12px;
+            font-size: 28px;
+            line-height: 1.8;
+        }
+
+        .countdown-box {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f0fdf4;
+            border-left: 6px solid var(--color-orange);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .countdown-box h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #064e3b;
+        }
+
+        .countdown {
+            font-size: 16px;
+            font-weight: 1000;
+            color: #dc2626;
+        }
+
+        .starburst-badge {
+    /* Set animation speed in seconds (e.g., 1s = 1 cycle per second) */
+    --pulse-speed: 0.125s;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e60000;
+    color: #ffff00;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 10px 14px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    margin-left: 6px;
+    text-transform: uppercase;
+    
+    /* Jagged starburst shape */
+    clip-path: polygon(
+        50% 0%, 63% 15%, 81% 6%, 80% 25%, 98% 28%, 
+        88% 44%, 100% 59%, 85% 70%, 91% 89%, 72% 87%, 
+        62% 100%, 48% 89%, 33% 98%, 28% 81%, 10% 82%, 
+        18% 64%, 0% 52%, 15% 38%, 3% 21%, 23% 20%, 31% 4%
+    );
+
+    /* Uses the variable for speed */
+    animation: pulse var(--pulse-speed) infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.85);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+
+
+        @keyframes newBlink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .4; transform: scale(1.1); }
+        }
+
+        /* High Contrast Accessibility Mode Support */
+        .high-contrast {
+            --surface-bg-light: #ffffff !important;
+            --surface-card: #f8fafc !important;
+            --text-primary: #000000 !important;
+            --text-secondary: #000000 !important;
+        }
+        /* CONTENT PROTECTION */
+body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+img{
+    -webkit-user-drag:none;
+    user-drag:none;
+}
+/* ===== FULL CAPITAL LETTERS ===== */
+
+body{
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-variant: normal;
+    font-variant-caps: normal;
+    font-feature-settings: "smcp" 0, "c2sc" 0;
+}
+
+h1,h2,h3,h4,h5,h6,
+th,
+.page-title,
+.section-title,
+.info-block h3,
+table th{
+    text-transform: uppercase;
+    font-variant: normal;
+    font-variant-caps: normal;
+    font-feature-settings: "smcp" 0, "c2sc" 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+body *{
+    text-transform: uppercase !important;
+}
+    </style>
+</head>
+<body>
+<div id="websiteBlocker" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:#ffffff;
+z-index:999999999;
+"></div>
+
+<div id="maintenancePage" style="display:none;">
+<div style="
+max-width:1200px;
+margin:350px auto;
+padding:10px;
+background:#0b0f19;
+border:10px solid violet;
+border-radius:1px;
+box-shadow:0 0 30px rgba(0,0,0,.25);
+font-family:Arial,Helvetica,sans-serif;
+text-align:center;
+">
+
+<div style="
+background:linear-gradient(90deg, blue, black, green);
+color:gold;
+border:10px solid red;
+padding:20px;
+border-radius:1px;
+">
+
+<h1 style="
+font-size:37px;
+font-weight:900;
+margin:0;
+letter-spacing:2px;
+">
+🏛️ COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS 🏛️
+</h1>
+
+<div style="font-size:60px;font-weight:900;margin-top:10px;">
+(CISCE)
+</div>
+
+<div style="font-size:50px;font-weight:900;margin-top:10px;">
+CLASS – IX BOARD EXAMINATION WEBSITE
+</div>
+
+<div style="font-size:45px;font-weight:900;margin-top:10px;">
+ACADEMIC SESSION : 2026 – 2027
+</div>
+
+</div>
+
+<div style="
+margin-top:35px;
+background: silver;
+border:10px solid gold;
+padding:10px;
+border-radius:1px;
+">
+
+<div style="
+font-size:50px;
+font-weight:900;
+color: red;
+">
+🚧 OFFICIAL WEBSITE UNDER SCHEDULED MAINTENANCE 🚧
+</div>
+
+</div>
+
+<div style="
+margin-top:35px;
+padding:30px;
+background:#f8f9fa;
+border:10px solid blue;
+border-radius:1px;
+text-align:justify;
+font-size:23px;
+line-height:2;
+font-weight:700;
+color: black;
+">
+
+THE COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS (CISCE) HEREBY NOTIFIES ALL STUDENTS, PARENTS, GUARDIANS, HEADS OF SCHOOLS, SCHOOL AUTHORITIES, TEACHING FACULTY, ADMINISTRATIVE PERSONNEL, AND ALL OTHER STAKEHOLDERS THAT THE OFFICIAL CLASS – IX BOARD EXAMINATION WEBSITE IS PRESENTLY UNDERGOING A SCHEDULED SYSTEM MAINTENANCE OPERATION.
+
+<br><br>
+
+THE CURRENT MAINTENANCE ACTIVITY IS BEING CARRIED OUT TO IMPLEMENT ESSENTIAL SERVER OPTIMISATIONS, DATABASE ENHANCEMENTS, SECURITY UPGRADES, SOFTWARE IMPROVEMENTS, PERFORMANCE TUNING, NETWORK MODERNISATION, AND OTHER NECESSARY TECHNICAL CONFIGURATIONS REQUIRED FOR THE SAFE, RELIABLE, AND UNINTERRUPTED DELIVERY OF ONLINE SERVICES.
+
+<br><br>
+
+DURING THIS PERIOD, SOME OR ALL ONLINE SERVICES INCLUDING THE PUBLIC WEBSITE, OFFICIAL NOTIFICATIONS, ANNOUNCEMENTS, REGISTRATION MODULES, DOWNLOAD FACILITIES, AND RELATED DIGITAL SERVICES MAY REMAIN TEMPORARILY UNAVAILABLE.
+
+<br><br>
+
+THE COUNCIL DEEPLY REGRETS ANY INCONVENIENCE CAUSED DURING THIS ESSENTIAL MAINTENANCE PERIOD AND SOLICITS THE KIND CO-OPERATION, UNDERSTANDING, AND PATIENCE OF ALL USERS WHILE THESE IMPORTANT SYSTEM IMPROVEMENTS ARE BEING COMPLETED.
+
+<br><br>
+
+ALL ONLINE SERVICES SHALL BE RESTORED IMMEDIATELY UPON THE SUCCESSFUL COMPLETION OF THE MAINTENANCE ACTIVITIES.
+
+</div>
+
+<div style="
+margin-top:30px;
+background:#e8f5e9;
+border:10px solid green;
+padding:20px;
+border-radius:1px;
+font-size:30px;
+font-weight:900;
+color:black;
+">
+
+🟢 THANK YOU FOR YOUR PATIENCE, UNDERSTANDING, AND CONTINUED CO-OPERATION. 🟢
+
+</div>
+
+<div style="
+margin-top:25px;
+font-size:35px;
+font-weight:900;
+color:white;
+animation:blink 0.5s infinite;
+">
+
+⏳ PLEASE VISIT AGAIN AFTER THE COMPLETION OF THE SCHEDULED MAINTENANCE. ⏳
+
+</div>
+
+<br>
+
+<button
+id="disableMaintenanceBtn"
+onmousedown="startHoldMaintenance()"
+onmouseup="cancelHoldMaintenance()"
+onmouseleave="cancelHoldMaintenance()"
+ontouchstart="startHoldMaintenance()"
+ontouchend="cancelHoldMaintenance()"
+style="
+display:none;
+padding:18px 40px;
+font-size:40px;
+font-weight:900;
+background: black;
+color:#fff;
+border:none;
+border-radius:1px;
+cursor:pointer;
+">
+🔐
+</button>
+</div>
+
+<style>
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:.35;}
+}
+</style>
+
+    <!-- YOUR MAINTENANCE PAGE CONTENT -->
+
+    
+
+</div>
+
+<div id="websiteContent">
+  
+    <!-- Official High-Contrast Corporate Identity Header -->
+    <header>
+        <div class="header-main-block">
+            <div style="width:100%; display:flex; justify-content:center; align-items:center;">
+    <img
+        src="logo.png"
+        draggable="false"
+        oncontextmenu="return false;"
+        ondragstart="return false;"
+        onselectstart="return false;"
+        style="
+            width:269px;
+            height:269px;
+            object-fit:contain;
+            border-radius:50%;
+            background:white;
+            box-shadow:0 0 20px rgba(16,185,129,0.5);
+            display:block;
+        ">
+</div>
+   <div style="height:10px;"> </div>
+            <div class="brand-text">
+                <h1>COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS</h1>
+                <div style="height:8px;"> </div>
+                <p>CISCE CLASS – IX BOARD EXAMINATION WEBSITE</p>
+            </div>
+        </div>
+        <div style="height:100px;"> </div>
+        <div class="header-meta-badge" style="align-items:center; text-align:center;">
+            <span class="cycle-year">2026 – 2027</span>
+            <span class="cycle-lbl">CISCE ACADEMIC YEAR</span>
+        </div>
+    </header>
+
+    <!-- Dynamic Toolbar Tools (NEW FEATURE) -->
+    <div style="height:10px;"> </div>
+    <div class="utility-bar">
+    </div>
+    <div style="height:30px;"> </div>
+
+    <!-- Floating Top Arrow Button at Right Side Bottom -->
+    <button class="floating-top-btn" onclick="scrollToTop()" title="Scroll to Top">🔝</button>
+
+    <!-- Navigation Infrastructure -->
+    <nav id="main-nav">
+        <button class="active" onclick="switchView('home-view', this)">HOME</button>
+        <button onclick="switchView('about-view', this)">ABOUT US</button>
+        <button onclick="switchView('classix-view', this)">SYLLABUS & CURRICULUM</button>
+        <button onclick="switchView('marks-view', this)">MARKS DISTRIBUTION</button>
+        <button onclick="switchView('resource-view', this)">RESOURCES AND REGULATIONS</button>
+        <button onclick="switchView('pyqp-view', this)">PREVIOUS YEARS PAPERS (PYQ's)</button>
+        <button onclick="switchView('qp2027-view', this)">(2027) ACADEMIC QUESTION PAPERS</button>
+        <button onclick="switchView('faq-view', this)">FAQ'S</button>
+    </nav>
+
+    <!-- Modern Performance CSS Ticker Layout -->
+    <div style="height:20px;"> </div>
+    <div class="marquee-strip">
+        <div class="marquee-label">Live Broadcast</div>
+        <div class="ticker-viewport" onmouseenter="document.getElementById('ticker-track').style.animationPlayState='paused'" onmouseleave="document.getElementById('ticker-track').style.animationPlayState='running'">
+            <div class="ticker-track" id="ticker-track">
+                <span id="ticker-object">📢🔔 OFFICIAL ANNOUNCEMENT 🔔📢 | 🏛️ THE COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS (CISCE) HEREBY NOTIFIES THAT THE ONLINE REGISTRATION PROCESS FOR THE CISCE CLASS – IX BOARD EXAMINATION FOR THE ACADEMIC YEAR – 2027 SHALL COMMENCE SHORTLY. 📚👨‍🎓👩‍🎓 ALL ELIGIBLE STUDENTS, PARENTS/GUARDIANS, HEADS OF SCHOOLS, SCHOOL AUTHORITIES, AND ALL OTHER CONCERNED ARE HEREBY ADVISED TO REMAIN IN READINESS FOR THE OFFICIAL COMMENCEMENT OF THE REGISTRATION PROCESS. 🏫📋 THE DETAILED REGISTRATION SCHEDULE 🗓️, ELIGIBILITY CRITERIA 📑, REGISTRATION PROCEDURE 🖥️, PRESCRIBED FEE DETAILS 💳, LIST OF REQUIRED DOCUMENTS 📂, IMPORTANT INSTRUCTIONS 📝, AND ALL OTHER RELEVANT GUIDELINES SHALL BE NOTIFIED IN DUE COURSE THROUGH THE OFFICIAL CISCE PORTAL. 🌐📖 ALL CONCERNED ARE ADVISED TO VISIT THE OFFICIAL PORTAL REGULARLY 🔄 FOR THE LATEST NOTIFICATIONS 📢, CIRCULARS 📜, PUBLIC NOTICES 📄, AND FURTHER OFFICIAL UPDATES. ⚠️ THE COUNCIL SOLICITS THE KIND CO-OPERATION OF ALL STAKEHOLDERS TOWARDS THE TIMELY, ACCURATE, AND SUCCESSFUL COMPLETION OF THE REGISTRATION PROCESS. 🤝✅ THANK YOU. 🙏</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-Time Dialogue Box Alert -->
+    <div class="board-dialogue-section">
+        <div class="dialogue-box">
+            <div class="dialogue-header">
+                <div class="dialogue-title">📜 High Priority OFFICIAL Executive Circular 📜</div>
+                
+            </div>
+            <div class="dialogue-body" id="dialogue-display-body">
+                📢🔔 OFFICIAL ANNOUNCEMENT 🔔📢 | 🏛️ THE COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS (CISCE) HEREBY NOTIFIES THAT THE ONLINE REGISTRATION PROCESS FOR THE CISCE CLASS – IX BOARD EXAMINATION FOR THE ACADEMIC YEAR – 2027 SHALL COMMENCE SHORTLY. 📚👨‍🎓👩‍🎓 ALL ELIGIBLE STUDENTS, PARENTS/GUARDIANS, HEADS OF SCHOOLS, SCHOOL AUTHORITIES, AND ALL OTHER CONCERNED ARE HEREBY ADVISED TO REMAIN IN READINESS FOR THE OFFICIAL COMMENCEMENT OF THE REGISTRATION PROCESS. 🏫📋 THE DETAILED REGISTRATION SCHEDULE 🗓️, ELIGIBILITY CRITERIA 📑, REGISTRATION PROCEDURE 🖥️, PRESCRIBED FEE DETAILS 💳, LIST OF REQUIRED DOCUMENTS 📂, IMPORTANT INSTRUCTIONS 📝, AND ALL OTHER RELEVANT GUIDELINES SHALL BE NOTIFIED IN DUE COURSE THROUGH THE OFFICIAL CISCE PORTAL. 🌐📖 ALL CONCERNED ARE ADVISED TO VISIT THE OFFICIAL PORTAL REGULARLY 🔄 FOR THE LATEST NOTIFICATIONS 📢, CIRCULARS 📜, PUBLIC NOTICES 📄, AND FURTHER OFFICIAL UPDATES. ⚠️ THE COUNCIL SOLICITS THE KIND CO-OPERATION OF ALL STAKEHOLDERS TOWARDS THE TIMELY, ACCURATE, AND SUCCESSFUL COMPLETION OF THE REGISTRATION PROCESS. 🤝✅ THANK YOU. 🙏
+            </div>
+        </div>
+    </div>
+
+    <!-- Secure Interactive Shell Dashboard -->
+
+<!-- Secure Interactive Shell Dashboard -->
+    <div class="admin-dashboard-wrapper" id="adminControlDashboard">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--surface-bg-light); padding-bottom: 20px; flex-wrap: wrap; gap: 20px;">
+            <h2 id="admin-panel-title" style="color: #064e3b; font-size: 30px; font-weight: 1000;">CISCE CLASS – IX BOARD'S CHIEF COORDINATOR'S TEAM</h2>
+            <div style="display: flex; gap: 12px;">
+                <button onclick="closeAdminDashboard()" style="background-color: var(--cisce-blue-mid); color: white; border: none; padding: 10px 20px; border-radius: var(--radius-md); cursor: pointer; font-size: 15px; font-weight: 1000; text-transform: uppercase; transition: var(--transition-smooth);">LOGOUT SESSION</button>
+                <button onclick="clearAllData()" style="background-color: var(--state-error); color: white; border: none; padding: 10px 20px; border-radius: var(--radius-md); cursor: pointer; font-size: 15px; font-weight: 1000; text-transform: uppercase; transition: var(--transition-smooth);">RESET SESSION</button>
+            </div>
+        </div>
+
+        <!-- Customizer Controls -->
+        <div class="admin-section-divider">🚨 EMERGENCY ANNOUNCEMENT SECTION 🚨</div>
+        <div class="admin-grid">
+            <div class="form-group" style="grid-column: 1 / -1;">
+                <label for="adminTickerInput">📢 BROADCAST EMERGENCY MESSAGE 📢</label>
+                <textarea id="adminTickerInput" class="form-input" rows="2" placeholder="TYPE EMERGENCY ANNOUNCEMENT" style="resize: vertical; font-family: monospace;"></textarea>
+                <button type="button" onclick="updateLiveTickerContent()" class="btn-action" style="margin-top: 12px;">RELEASE</button>
+            </div>
+        </div>
+
+<div class="admin-section-divider">
+🌐 PORTAL LAST UPDATED SETTINGS 🌐
+</div>
+
+<div class="admin-grid">
+
+<div class="form-group">
+<label>UPDATE DATE</label>
+<input type="date" id="adminUpdateDate" class="form-input">
+</div>
+
+<div class="form-group">
+<label>UPDATE TIME</label>
+<input type="time" id="adminUpdateTime" class="form-input">
+</div>
+
+</div>
+
+<button class="btn-action" onclick="savePortalUpdateTime()">
+SAVE LAST UPDATED TIMELINE
+</button>
+
+<br><br>
+
+        <div class="admin-section-divider">⏳ EMERGENCY UPLOADING SECTION ⏳</div>
+        <form id="postingForm" onsubmit="executePortalPublish(event)">
+            <input type="hidden" id="editItemId" value="">
+
+            <div class="admin-grid">
+                <div class="form-group">
+                    <label>🎯 TARGET SUBJECT 🎯</label>
+                    <select id="pubTarget" class="form-input" onchange="toggleInputFieldsBasedOnTarget()">
+                        <option value="announcement">📢 IMPORTANT ANNOUNCEMENTS 📢</option>
+                        <option value="notice">📩 Notices 📩 &amp; 📩 CIRCULARS 📩</option>
+                        <option value="result">📋 RESULTS ANNOUNCEMENT & LINK 📋</option>
+                        <option value="pyqp">📑 PYQP'S 📑</option>
+                        <option value="qp2027">📄 (2027) QUESTION PAPERS 📄</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>🪪 MAIN IDENTIFICATION HEADLINE 🪪</label>
+                    <input type="text" id="pubTitle" class="form-input" placeholder="ENTER MAIN HEADLINE" required>
+                </div>
+            </div>
+            
+            <div class="admin-grid" style="margin-top: 0;">
+                <div id="fileUploadContainer" class="form-group">
+                    <label>📄 ATTACH PDF/JPG DOCUMENT 📄</label>
+                    <input type="file" id="pubFile" class="form-input" accept=".pdf">
+                </div>
+                <div id="linkUrlContainer" class="form-group" style="display: none;">
+                    <label>CISCE SECURE LINK URL</label>
+                    <input type="url" id="pubUrl" class="form-input" placeholder="ENTER THE LINK">
+                </div>
+            </div>
+
+            <div class="flex-btn-cluster">
+                <button type="submit" id="mainSubmitBtn" class="btn-action">📠 PUBLISH 📠</button>
+                <button type="button" id="draftSubmitBtn" onclick="saveItemAsDraft()" class="btn-action" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff;">📝 SAVE AS DRAFT 📝</button>
+                <button type="button" id="cancelEditBtn" onclick="resetFormState()" class="btn-action" style="background-color: #64748b; display:none;">➖ ABORT ➖</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- VIEW 1: HOME FEED PORTAL -->
+    <div id="home-view" class="page-view active-view">
+        
+        <!-- Live System Metric Dashboard Blocks -->
+        <div class="metric-dashboard-strip">
+            <div class="metric-node">
+                <h4> CISCE ACADEMIC YEAR</h4>
+                <div class="metric-val">2026 – 2027</div>
+            </div>
+            <div class="metric-node">
+                <h4>AFFILIATION RULE</h4>
+                <div class="metric-val">CISCE</div>
+            </div>
+            <div class="metric-node">
+                <h4> SERVER CONNECTION</h4>
+                <div class="metric-val">AES_256 ENCRYPTED</div>
+            </div>
+        </div>
+
+        <div class="portal-grid">
+            <div class="left-column">
+                <div class="cisce-card" style="padding: 35px;">
+                    <h2 style="color: #064e3b; margin-bottom: 16px; font-size: 35px; font-weight: 1000; letter-spacing: -0.02em;">WARM WELCOME TO THE CISCE CLASS – IX BOARD EXAMINATION WEBSITE PORTAL.</h2>
+                    <p style="color: #064e3b; font-size: 20px; margin-bottom: 16px; line-height: 1.8; text-align: justify;">
+                        Welcome to the official Council for the Indian School Certificate Examinations (CISCE) digital terminal for the <strong>Class IX Examination Cycle for 2027</strong>. This gateway acts as the primary data node providing policy validation matrices, structural course outlines, and legal operational notices to all affiliated educational institutions within our network. 
+                    </p>
+                    <p style="color: #064e3b; font-size: 20px; line-height: 1.8; text-align: justify;">
+                        As Class IX establishes the compulsory cognitive foundation required for advanced national board entry certifications, strict alignment with these modules is mandatory. Institutional heads, academic instructors, and internal assessors are requested to continuously check this resource panel to ensure standard configurations match the 2027 board parameters.
+                    </p>
+                </div>
+
+                <div class="cisce-card">
+                    <div class="card-header"><h2>IMPORTANT HOTLINE ANNOUNCEMENTS</h2></div>
+                    <ul class="feed-list" id="announcement-container">
+                        <li class="no-data-placeholder">NO ANNOUNCEMENTS HAVE BEEN POSTED AT THIS MOMENT.</li>
+                    </ul>
+                </div>
+
+                <div class="cisce-card">
+                    <div class="card-header"><h2>NOTICES & CIRCULARS</h2></div>
+                    <ul class="feed-list" id="notice-container">
+                        <li class="no-data-placeholder">NO NOTICES OR CIRCULARS HAVE BEEN POSTED AT THIS MOMENT.</li>
+                    </ul>
+                </div>
+                <div class="cisce-card">
+                    <div class="card-header"><h2>RESULTS ANNOUNCEMENTS</h2></div>
+                    <ul class="feed-list" id="results-container">
+                        <li class="no-data-placeholder">NO LIVE RESULTS LINK HAS BEEN ACTIVATED AT THIS MOMENT.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="cisce-card" style="padding:24px; background:linear-gradient(180deg,#ffffff 0%, #f0fdf4 100%);">
+                    <h3 style="color:#064e3b; font-size:35px; margin-bottom:12px; border-bottom:3px solid var(--cisce-accent-gold); padding-bottom:8px; text-transform:uppercase; letter-spacing:0.05em;">OPERATIONAL PROTOCOLS</h3>
+                    <ul style="margin-left:18px; font-size:22px; color:#047857; display:flex; flex-direction:column; gap:12px; line-height:1.7;">
+                        <li>VERIFY YOUR SCHOOL CODE CREDENTIALS BEFORE ACCESSING ANY BOARD SERVICE.</li>
+                        <li>CHECK THIS WEBSITE REGULARLY FOR THE LATEST NOTICES, CIRCULARS AND ANNOUNCEMENTS.</li>
+                        <li>DOWNLOAD ONLY THE MOST RECENT OFFICIAL PDF DOCUMENTS AVAILABLE ON THE PORTAL.</li>
+                        <li>ENSURE ALL STUDENT INFORMATION IS VERIFIED BEFORE SUBMISSION.</li>
+                        <li>MAINTAIN THE CONFIDENTIALITY OF ALL CANDIDATE AND SCHOOL LOGIN CREDENTIALS.</li>
+                        <li>FOLLOW ALL CISCE EXAMINATION RULES, REGULATIONS AND ADMINISTRATIVE GUIDELINES.</li>
+                        <li>KEEP STUDENT RECORDS, INTERNAL ASSESSMENTS AND EXAMINATION DATA SECURE.</li>
+                        <li>REPORT ANY DISCREPANCIES OR ERRORS TO THE SCHOOL AUTHORITY IMMEDIATELY.</li>
+                        <li>RESULTS, CIRCULARS AND OFFICIAL NOTIFICATIONS PUBLISHED ON THIS WEBSITE SHALL PREVAIL OVER PREVIOUS COMMUNICATIONS.</li>
+                        <li>USE A MODERN WEB BROWSER WITH JAVASCRIPT ENABLED FOR THE BEST EXPERIENCE.</li>
+                        <li>PORTAL SERVICES MAY BE TEMPORARILY UNAVAILABLE DURING SCHEDULED MAINTENANCE.</li>
+                        <li>DO NOT SHARE OR DISTRIBUTE RESTRICTED BOARD DOCUMENTS WITHOUT AUTHORIZATION.</li>
+                        <li>VERIFY ALL DATES, DEADLINES AND EXAMINATION SCHEDULES BEFORE TAKING ACTION.</li>
+                        <li>KEEP YOUR SCHOOL CONTACT DETAILS UPDATED FOR IMPORTANT COMMUNICATIONS.</li>
+                        <li>ALL BOARD DECISIONS REGARDING EXAMINATION ADMINISTRATION SHALL BE FINAL.</li>
+                    </ul>
+                </div>
+
+                <div class="cisce-card" style="padding:25px;">
+                    <h2 style="text-align:center; font-size:18px;">⏳ COUNTDOWN TO IMPORTANT EVENTS ⏳</h2>
+                    <div class="countdown-box">
+                    <div id="registrationPostponedBox" style="
+    display:none;
+    padding:25px 5px;
+    background:linear-gradient(135deg,#fff7ed,#fee2e2);
+    border:4px solid #dc2626;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(220,38,38,0.18);
+    margin-bottom:3px;
+">
+
+    <div style="
+        font-size:18px;
+        font-weight:1000;
+        color:#b91c1c;
+        margin-bottom:0px;
+        margin-up:30px;
+    ">
+        🚨 REGISTRATION PROCESS POSTPONED 🚨
+    </div>
+    </div>
+
+    <div id="regStartSection">
+
+    <h3>🗓️ REGISTRATION BEGINS ON</h3>
+
+    <div style="font-size:20px;font-weight:800;color:#064e3b;margin-bottom:5px;">
+        AUGUST 11, 2026 AT 10:00:00 A.M.
+    </div>
+
+    <div id="count_reg_start" class="countdown"></div>
+
+</div>
+    <div id="regCloseSection" style="display:none;">
+
+    <h3 style="margin-top:15px;">🗓️ REGISTRATION CLOSES AT</h3>
+
+    <div style="font-size:20px;font-weight:800;color:#064e3b;margin-bottom:5px;">
+        SEPTEMBER 15, 2026 AT 11:59:59 P.M.
+    </div>
+
+    <div id="count1" class="countdown"></div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>    
+    </div>
+   
+
+    <!-- VIEW 2: ABOUT THE COUNCIL -->
+    <div id="about-view" class="page-view">
+        <div class="static-content">
+            <h2>About the Council</h2>
+            <p>The <strong>Council for the Indian School Certificate Examinations (CISCE)</strong> was founded in 1958 to establish a high-quality educational framework across secondary learning environments. As an independent, authoritative board, CISCE continuously develops advanced curriculum plans, balanced assessment methods, and progressive grading scales that empower students nationwide.</p>
+            
+            <p>Our academic framework is structured to verify conceptual mastery rather than rote learning. By keeping grading parameters uniform across all geographic zones, the Council preserves academic integrity for every student within our partner schools. Through systematic process reviews and continuous infrastructure optimization, CISCE has modernised its traditional methodologies to successfully match the stringent demands of higher education globally.</p>
+            
+            <div class="info-block">
+                <strong>Foundational Mandate :</strong> To deliver highly precise, equitable evaluation systems designed to assess logical deduction, critical analysis, and practical reasoning proficiencies.
+            </div>
+
+            <h3>Curricular Architecture Philosophy</h3>
+            <p>The standard CISCE curriculum is built upon deep conceptual training in natural sciences, mathematical computation, precise literacy, and socioeconomic studies. We emphasize practical application, laboratory experiments, and investigative field projects over purely abstract knowledge. This integrated model bridges theoretical frameworks with real-world problems, helping students cultivate critical thinking, adaptability, and analytical research skills early in their academic journey.</p>
+
+            <h3>Institutional Scale and Quality Assurance</h3>
+            <p>Connecting thousands of top-tier schools globally, the Council maintains strict verification workflows to ensure uniform grading conditions are followed everywhere. Continuous training initiatives for educators help our network deliver optimal academic standards across all divisions.</p>
+        </div>
+    </div>
+
+    <!-- VIEW 3: SYSTEM EXAMINATION FRAMEWORK -->
+    <div id="classix-view" class="page-view">
+        <div class="static-content">
+            <h2>Official Class IX Subject Syllabus & Curriculum</h2>
+            <p>Welcome to the comprehensive blueprint architecture containing the official, verified **CISCE Class IX Board Curricular Layout**. Select any tracking subject panel below to view detailed breakdown configurations and compulsory chapter structures.</p>
+            
+            <div class="info-block">
+                <strong>Evaluation Matrix Standard Directive:</strong> Theory exams hold an 80% weight split across primary disciplines, with continuous interior portfolio assignments validating the remaining 20%.
+            </div>
+
+            <!-- Subject Accordions Framework Matrix -->
+            
+            <!-- 1. English Language -->
+            <details class="syllabus-subject-card">
+                <summary>📑 ENGLISH LANGUAGE (PAPER – 1) 📑</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: COMPOSITION SKILLS &amp; EXPOSITORY ESSAYS</h4>
+                        <p>TRAINING MANDATES FOCUS ON FORMATTING EXPOSITORIES, NARRATIVE LOGISTICS, ARGUMENTATIVES, AND DESCRIPTIVE PROSE PIECES ENCOMPASSING A 300-350 WORD THRESHOLD MATRIX.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: LETTER WRITING MATRICES &amp; FORMAL DESIGNS</h4>
+                        <p>STRUCTURED ARCHITECTURE COVERS DETAILED PRIVATE SECTOR FORMAL APPLICATIONS, COMPLAINT DISPATCH ARCHITECTURE, EXECUTIVE MEMORANDUMS, AND INFORMAL SOCIAL CORRESPONDENCE FORMS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: NOTICES, ANNOUNCEMENTS &amp; EMAIL CREATION ETIQUETTE</h4>
+                        <p>COMPULSORY BLUEPRINT TRAINING SPECIFYING INSTITUTIONAL CIRCULAR FABRICATION, NOTICE DISPLAY MATRICES, TARGET ASSIGNMENTS, AND STRUCTURAL ELECTRONIC MAIL ASSEMBLY CHANNELS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: UNSEEN COMPREHENSION ANALYSIS &amp; SUMMARIZATION DATA</h4>
+                        <p>COMPREHENSION READINGS REQUIRING TEXTUAL EXTRACTION PROCESSED VIA SPECIFIC LEXICAL EVALUATION MODES, CONTEXT-BASED DEFINITIONS, AND SYNTACTICAL PARSING RULES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: APPLIED SYNTAX, VERBAL TENSE RULES &amp; GRAMMAR CONTEXTS</h4>
+                        <p>CORE SYSTEM FRAMEWORK VERIFYING PREPOSITION INTERLOCKS, TRANSFORMATION SYSTEM SEQUENCES, DIRECT-INDIRECT ALTERATIONS, VOCABULARY DRILLS, AND TENSE PHASING CONSTRAINTS.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 2. English Literature -->
+            <details class="syllabus-subject-card">
+                <summary>📖 ENGLISH LITERATURE (PAPER – 2) 📖</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: DRAMA - SHAKESPEARIAN OPERA (THE MERCHANT OF VENICE)</h4>
+                        <p>TEXTUAL STUDY FRAMEWORK MANDATING FULL LITERAL DECONSTRUCTION OF ACT I AND ACT II. THEMES INCLUDE ANALYSIS OF HISTORICAL CONTEXTS, REVENGE MOTIFS, LEGAL CONFLICT MATRICES, CHARACTER PATHOS, AND INTENSE DIALOGUE COMPREHENSION ANALYSIS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: PROSE POOL ARCHIVES (TREASURE TROVE MODULES)</h4>
+                        <p>COMPULSORY SELECTIONS: "CHIEF SEATTLE'S SPECIFIC ORATION DIRECTIVES", "THE UNEXPECTED OLD MAN AT THE STRUCTURAL BRIDGEWAY SYSTEMS", "A HORSE WITH COMPULSORY DUAL TRAILER ATTACHMENTS", AND "HEARTS AND HANDS INTERTWINED MATRICES". REQUIRES DEEP ANALYTIC THEME EXTRACTIONS AND PLOT PROFILES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: POETICAL TEXT ANALYSIS FRAMEWORK</h4>
+                        <p>COMPULSORY ANALYSIS COVERS: "THE HEART OF THE FOREST ENVIRONMENT", "THE DYNAMIC VALUE OF INDIGENOUS BAZAARS AT HYDERABAD INFRASTRUCTURES", "THE COLD WITHIN INTERNAL EMOTIONAL DOMAINS", AND "THE BRAVE DYNAMIC LEAP OF INDIVIDUAL ATHLETES".</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 3. Hindi -->
+            <details class="syllabus-subject-card">
+                <summary>🇮🇳 HINDI (SECOND LANGUAGE) 🇮🇳</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>भाग १: व्यावहारिक व्याकरण नियम (APPLIED SYNTAX &amp; GRAMMAR RULES)</h4>
+                        <p>विलोम शब्द प्रणालियों, पर्यायवाची संरचना चक्र, मुहावरे अनुप्रयोग व्यवस्थाएं, अशुद्ध वाक्यों का व्यवस्थित शोधन एवं शुद्धिकरण नियम प्रणालियाँ।</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>भाग २: निबंध लेखन एवं रचनात्मक संरचना विधा (CREATIVE ESSAYS)</h4>
+                        <p>समसामयिक, सामाजिक एवं विचारोत्तेजक विषयों पर आधारित ३०० शब्दों का रचनात्मक निबंध निरूपण संरचना।</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>भाग ३: पत्र लेखन व्यवस्था (FORMAL &amp; INFORMAL CORRESPONDENCE)</h4>
+                        <p>कार्यालयी एवं व्यावसायिक व्यवस्थाओं से संबंधित औपचारिक प्रारूप एवं पारिवारिक सामाजिक अनौपचारिक पत्र विन्यास ढांचा।</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>भाग ४: अपठित गद्यांश एवं समीक्षा (UNSEEN COMPREHENSION PASSAGES)</h4>
+                        <p>गद्यांश आधारित वैचारिक अवबोध परीक्षण प्रश्न प्रणालियाँ, केंद्रीय भाव निष्कर्षण एवं संक्षिप्त सारांश लेखन विन्यास।</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>भाग ५: साहित्य संकलन - गद्य एवं पद्य विधाएं (PRESCRIBED TEXTS &amp; POETRY MODULES)</h4>
+                        <p>निर्धारित पाठ्यपुस्तक के प्रारंभिक ५ अध्यायों तथा ५ प्रमुख कविताओं का गहन तात्विक विश्लेषण, चरित्र चित्रण एवं कथासार समीक्षा।</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 4. Telugu -->
+            <details class="syllabus-subject-card">
+                <summary>🗣️ TELUGU (SECOND LANGUAGE) 🗣️</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>విభాగం A: భాషా నైపుణ్యం మరియు వ్యాకరణం (GRAMMAR &amp; APPLIED SYNTAX)</h4>
+                        <p>సంధులు, సమాసాలు, జాతీయాలు, సామెతలు, విభక్తులు మరియు వాక్యాల రూపాంతీకరణ నియమ నిబంధనల సంపూర్ణ విశ్లేషణ వ్యవస్థ.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>విభాగం B: సృజనాత్మక వ్యాస రచన ప్రక్రియ (CREATIVE ESSAY STRUCTURING)</h4>
+                        <p>నిర్ణీత సాంఘిక మరియు సమకాలీన విషయాలపై కనీసం 300 పదాల పరిమితితో కూడిన విశ్లేషణాత్మక వ్యాస సంకలనం.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>విభాగం C: లేఖారచన నమూనాలు (OFFICIAL &amp; INFORMAL LETTERS)</h4>
+                        <p>ప్రభుత్వ మరియు ప్రైవేట్ సంస్థల నిమిత్తం ఉద్దేశించిన అధికారిక లేఖలు మరియు బంధుమిత్రులకు వ్రాసే వ్యక్తిగత లేఖల నమూనా రూపకల్పన.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>విభాగం D: అపరిచిత గద్యభాగం - అవగాహన (COMPREHENSION CRITERIA)</h4>
+                        <p>ఇవ్వబడిన అపరిచిత గద్య భాగాన్ని క్షుణ్ణంగా పరిశీలించి, దానిపై సంధించిన ప్రశ్నలకు ఖచ్చితమైన సమాధానాలను సంగ్రహించే ప్రక్రియ.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>విభాగం E: సాహిత్య పఠనం - గద్య మరియు పద్య భాగాలు (PRESCRIBED LITERARY SELECTIONS)</h4>
+                        <p>బోర్డు ద్వారా అధికారికంగా ఆమోదించబడిన పాఠ్య పుస్తకం లోని మొదటి 5 పాఠ్యాంశాల మరియు పద్యాల సమగ్ర భావ సంగ్రహం మరియు పాత్రల విశిష్టత.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 5. Mathematics -->
+            <details class="syllabus-subject-card">
+                <summary>📐 MATHEMATICS 📐</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: PURE ALGEBRAIC EQUATIONS &amp; EXPANSION POLYNOMIALS</h4>
+                        <p>COVERS EXTENSIVE EXPANSIONS USING STANDARD IDENTITIES, COMPULSORY FACTORISATION METHODS FOR TRINOMIALS, SOLVING SIMULTANEOUS LINEAR BALANCES NATIVELY, AND MANAGING FRACTIONAL EXPONENT POWER LAWS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: COMMERCIAL COMPUTER APPLICATIONS &amp; COMPOUND INTEREST MATH</h4>
+                        <p>MATHEMATICAL STUDY OF APPLIED INTEREST MODES, COMPUTING ACCUMULATED VALUES VIA RECURSIVE FORMULAS, AND ANALYZING COMMERCIAL PROFITABILITY RATES DEVOID OF SIMPLE STEP PATTERNS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: COORDINATE MATRIX SCHEMES &amp; GRAPHICAL ANALYTICS</h4>
+                        <p>GRAPHING LINEAR INTERCEPTS, DETERMINING PLANE DISTANCE FORMULAS BETWEEN CARTESIAN COORDINATES, SLOPE ANGLE INTERLOCKS, AND MIDPOINT ISOLATION PROTOCOLS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: EUCLIDEAN GEOMETRY &amp; THEOREMS ON POLYGONS</h4>
+                        <p>STRICT PROOFS FOCUS ON PARALLELOGRAM STRUCTURAL AXIOMS, TRIANGLE CONGRUENCY CRITERIA, MIDPOINT EQUIVALENCE SCALES, AND AREA THEOREM MATRIX CHECKS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: TRIGONOMETRIC IDENTITIES &amp; GEOMETRIC MENSURATION</h4>
+                        <p>SOLVING RIGHT-ANGLED TRIANGLES VIA RATIO INVERSES, CALCULATING CYLINDER VOLUMES, SURFACE ENCLOSURE ARCHITECTURES, AND HEMISPHERICAL SPACE QUANTIFICATIONS.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 6. Physics -->
+            <details class="syllabus-subject-card">
+                <summary>⚛️ PHYSICS (PAPER – 1) ⚛️</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: KINEMATICS, MOTION CALCULATIONS &amp; ELEMENTARY FORCE STATICS</h4>
+                        <p>STRICT MAPPING OF ONE-DIMENSIONAL VELOCITY ARRAYS, EQUATIONS OF MOTION, GALILEAN DYNAMICS, NEWTON'S CORE INDUCTIVE COMPULSORY INERTIA PRINCIPLES, AND GRAVITATIONAL ATTRACTIVE PARAMETERS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: FLUID MECHANICS, HYDROSTATIC BALANCES &amp; ATMOSPHERIC PRESSURE</h4>
+                        <p>COMPUTE BUOYANT UPTHRUST ACTIONS, ARCHIMEDES' DISPLACEMENT LAW COEFFICIENTS, SPECIFIC GRAVITY BALANCES, DENSITY FRACTION DETERMINATION, AND BAROMETRIC ALTITUDE FLUID RESPONSES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: THERMAL ENERGY COMPACTS, HEAT FLOWS &amp; EXPANSION DYNAMICS</h4>
+                        <p>THERMOMETRIC CONVERSION SCALES, LATENT CONDUCTIVITY CONTEXTS, TRACKING ANOMALOUS VOLUMETRIC METRIC VARIATIONS IN WATER, AND THERMAL TRANSFER PATHWAYS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: WAVE RESONANCE MATRIX &amp; ACOUSTIC SOUND VELOCITIES</h4>
+                        <p>MEASURE PROPAGATION COEFFICIENTS OF LONGITUDINAL SOUND WAVES, AUDIBLE SPECTRUM BANDWIDTH LIMITS, ULTRASONIC REFLECTION LAYOUTS, AND SONAR FREQUENCY DYNAMICS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: CURRENT ELECTRICITY PROTOCOLS &amp; STATIC MAGNETISM DYNAMICS</h4>
+                        <p>ELEMENTARY CIRCUIT MAPPING, MEASURING RESISTANCE VARIATIONS ACROSS OHMIC CONDUCTORS, VOLTAGE GRADIENTS, CORE FIELD MAPPING STRATEGIES FOR BAR MAGNETS, AND INDUCTIVE POLARITY RULES.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 7. Chemistry -->
+            <details class="syllabus-subject-card">
+                <summary>🧪 CHEMISTRY (PAPER – 2) 🧪</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: CHEMICAL NOMENCLATURE &amp; STOICHIOMETRIC BALANCES</h4>
+                        <p>DETERMINATION PROTOCOLS FOR ELEMENTARY SYMBOL ARRAYS, BALANCING VALENCY RATIOS, TRANSCRIPTING BALANCED EQUATIONS MIXES, RADICAL ISOLATION SCHEMES, AND GAS LAW TRANSFORMATIONS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: ATOMIC SYMMETRIES, PERIODIC ARRAYS &amp; VALENCY VALVES</h4>
+                        <p>DECONSTRUCT SUBATOMIC CHARGE STATES PROCESSED VIA BOHR SHELL CONFIGURATIONS, ELECTRON VALUE SCALES, AND RADIAL METRIC PERIODIC MODES (GROUPS 1 TO 18 SHIFT MATRIX PARSING).</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: INDUSTRIAL WATER HYDROLOGY &amp; TREATMENT METRICS</h4>
+                        <p>CHEMICAL IDENTIFICATION OF TEMPORARY HARDNESS PROFILE COMPACTS, SOLUBLE REAGENT PRECIPITATION METHODS, REMOVING MAGNESIUM BI-CARBONATES, AND DETERGENT DEGRADATION CHECKS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: OXIDATION REDUCTION REACTIONS &amp; STRUCTURAL KINETICS</h4>
+                        <p>MAPPED TRANSFER DYNAMICS OF ELECTRON BEAMS, SYNTHESIS ASSIGNMENT STEPS, DISPLACEMENT CATALYST TRACKS, AND THERMAL THERMOLYSIS REACTION MATRICES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: ATMOSPHERIC GAS STUDIES &amp; POLLUTION THRESHOLDS</h4>
+                        <p>LABORATORY SYNTHESIS BLUEPRINT DESIGNS FOR SEPARATING ELEMENTAL HYDROGEN MIXES, NITROGEN RETRIEVAL STEPS, AND MONITORING ACID RAIN DISSOLUTION KINETICS.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 8. Biology -->
+            <details class="syllabus-subject-card">
+                <summary>🧬 BIOLOGY (PAPER – 3) 🧬</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: CELLULAR ANATOMY ORGANS &amp; HISTOLOGICAL TISSUE CLUSTERS</h4>
+                        <p>DETAILED MAPPING OF CYTOPLASMIC ORGANS METRIC MIXES, MEMBRANE TRANSPORTS, MITOCHONDRIAL DATA STORAGE MATRICES, AND PLANT-ANIMAL STRUCTURAL MICROSCOPIC DIFFERENTIATIONS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: VEGETATIVE PHYSIOLOGY MATRIX &amp; TRANSPIRATION FORMS</h4>
+                        <p>ROOT ABSORPTION PROTOCOLS MECHANIZED BY OSMOTIC POTENTIAL CONTROLS, XYLEM HYDRAULIC PRESSURE PATHWAYS, AND MEASURING POTOMETER CELL LOSS RESPONSES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: HUMAN ANATOMY SYSTEMS &amp; DIGESTIVE BIOME MECHANISMS</h4>
+                        <p>ALIMENTARY CANAL MAPPING COMPULSORY RUN DIRECTIONS, ENZYMATIC CATALYSIS SPEEDS FOR PROTEIN DECONSTRUCTIONS, INFRASTRUCTURE METRICS OF THE LIVER, AND NUTRITIONAL ABSORPTION LAWS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: SKELETAL SYSTEM MATRIX &amp; LOCOMOTOR MECHANICS</h4>
+                        <p>AXIAL INFRASTRUCTURE BONE COMPONENT MAPS, APPENDICULAR SYSTEM INTEGRITY TESTS, JOINT LUBRICATION METRICS, AND MUSCULAR KINETIC INTERLOCK LAYOUTS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: EPIDEMIOLOGICAL MICROBIOLOGY PROTOCOLS &amp; IMMUNITY SPHERES</h4>
+                        <p>CLASSIFICATION METRICS FOR PATHOCENIC BACTERIAL LAYOUTS, VIRAL STRAIN REPLICATION STEPS, VECTOR PREVENTATIVE MAPS, WACCINE ARCHITECTURES, AND IMMUNIZATION PROGRAM OUTLINES.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 9. History & Civics -->
+            <details class="syllabus-subject-card">
+                <summary>🏛️ HISTORY &amp; CIVICS (PAPER – 1) 🏛️</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: CIVICS FRAMEWORK - THE CONSTITUTION INTERLOCKS</h4>
+                        <p>STRUCTURAL STUDY VERIFYING SALIENT DEFINITIVE BASES OF THE INDIAN CONSTITUTION SYSTEM, UNION LEGISLATIVE HOUSE ASSEMBLY CONVENTIONS, PRAMBLE CONSTRUCTS, AND STATE ORGANS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: CIVICS - LOCAL SELF-GOVERNMENT MATRIX</h4>
+                        <p>OPERATIONAL INFRASTRUCTURE OF RURAL PANCHAYATI RAJ NETWORKS, MUNICIPAL CORPORATION COMPULSORY HIERARCHIES, AND REVENUE SOURCING BALANCES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: HISTORY ARCHIVES - ANCIENT INDIAN EMPIRES</h4>
+                        <p>HARAPPAN SEALS ANALYSIS, CIVILIZATION MAP ARRAYS, VEDIC SOCIOPOLITICAL EVOLUTIONS, BUDDHISTIC MORAL SCRIPTS, AND JAIN PHILOSOPHICAL SHIFTS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: THE MEDIEVAL DELHI SULTANATE &amp; MUGHAL CONSOLIDATION</h4>
+                        <p>HISTORICAL SURVEY TRACKING KHILJI FISCAL CENTRAL CONTROL SYSTEMS, TUGHLQ OPERATIONAL REFORMS, AKBAR'S INTEGRATION MATRIX PLANS, AND ARCHITECTURAL MONUMENT EVOLUTIONS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: THE MODERN RENAISSANCE INTERLOCK SYSTEMS</h4>
+                        <p>CHRONICLES DESTRUCTURING THE INDUSTRIAL EUROPEAN EXPANSION STRATEGIES, REVOLUTION METRICS, AND SOCIAL REFORM MOVEMENTS HEADED BY RAJA RAM MOHAN ROY.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 10. Geography -->
+            <details class="syllabus-subject-card">
+                <summary>🌍 GEOGRAPHY (PAPER – 2) 🌍</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: LITHOSPHERIC DYNAMICS &amp; CORE INTERIOR MATRIX STRUCTURES</h4>
+                        <p>MAPPING CRUSTAL STRATA CONTEXT VALUES, FAULT DYNAMICS COEFFICIENTS, SEISMOLOGICAL METRICS ANALYSIS VECTORS, VOLCANIC SPEW ZONING, AND DIASTROPHIC SHIFTS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: ATMOSPHERIC PRESSURE CELLS, WIND FLOW ARRAYS &amp; RADIAL CYCLONES</h4>
+                        <p>IDENTIFYING PLANETARY THERMAL PRESSURE BELT REGIONS, CORIOLIS FORCES ROTATIONAL PARAMETERS, JET STREAM PATHS, MONSOON FLOW ARRAYS, AND ANTICYCLONIC COMPACT SYSTEMS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: HYDROLOGICAL ARCHITECTURES &amp; MARINE OCEAN MATRIX CURRENTS</h4>
+                        <p>SURVEY GEOMORPHIC SHORES CONFIGURATIONS, THERMOHALINE CIRCULATION LOOPS, EQUATORIAL DRIFT STREAM PATTERNS, SUBTROPICAL DISSOLUTION INDICES, AND TIDAL WAVE AMPLITUDES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: TOPOGRAPHICAL SURVEY MAP READINGS &amp; CONTOUR PROFILES</h4>
+                        <p>COMPULSORY ANALYSIS BLUEPRINTS MAPPING CONTOUR INTERCEPT STRATEGIES, GRID CODES GRID PARSING PROTOCOLS, DRAINAGE PATTERN TYPOLOGIES, AND LEGEND CODE MATCHING SCHEMES.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: ENVIRONMENTAL WASTE FLOW HANDLING OPERATIONS</h4>
+                        <p>MUNICIPAL TOXIC SEGREGATION SCHEMES, BIODEGRADABLE CONVERSION RATIOS, LANDFILL CONTAINMENT PARAMETERS, AND ECOSYSTEM CONSERVATION MATRICES.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 11. Computer Applications -->
+            <details class="syllabus-subject-card">
+                <summary>💻 COMPUTER APPLICATIONS 💻</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: OOP (OBJECT ORIENTED PROGRAMMING CORE ARCHITECTURE)</h4>
+                        <p>DECONSTRUCT INHERITANCE INJECTION HIERARCHIES, POLYMORPHIC METRIC RE-ROUTING RUNTIME PROTOCOLS, DATA ABSTRACTION GATEWAYS, AND ENCAPSULATION ENCLOSURE CONTROLS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: JAVA WRAPPER ARCHITECTURE, VARIABLE PRIMITIVES &amp; DATA STRINGS</h4>
+                        <p>COMPULSORY MEMORY MAP DEFINITIONS ALLOCATED TO BYTE MATRIX FIELDS, INT VARIABLE TYPES, LONG ARRAYS, ASCII DATA CONVERSION COEFFICIENTS, AND TOKEN SPECS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: CONDITIONAL INTERCEPT ROUTING OPERATIONS</h4>
+                        <p>SYNTAX TESTING FOCUSES ON LOGICAL IF-ELSE BALANCE LOOPS, NESTED FLOW EVALUATORS, CONDITIONAL TERNARY ? MATRIX GATES, AND SWITCH-CASE ROUTINGS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: ITERATIVE COMPULSORY PROGRAMMING CONTROLS (LOOP INFRASTRUCTURE)</h4>
+                        <p>EXECUTION RUN MECHANISMS FOR CONVOLUTED FOR LOOPS, DETERMINING WHILE STATEMENT CRITERIA, DO-WHILE ESCAPE ARRAYS, AND NESTED RECURSION LOOPS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: BLUEPRINT COMPILING METHODOLOGIES &amp; CLASS ARRAYS</h4>
+                        <p>METHOD INVOCATION SYNTAX COVERS VOID PARAMETER SHIFT SIGNATURE ARCHITECTURES, RE-ROUTING RETURN VALUE CONTEXTS, CONSTRUCTOR INITIALISATIONS, AND TERMINAL COMPILE STRATEGIES.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 12. Computer Science -->
+            <details class="syllabus-subject-card">
+                <summary>💾 COMPUTER SCIENCE 💾</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: ARCHITECTURAL HARDWARE SYSTEMS &amp; BOOLEAN SYSTEM GATES</h4>
+                        <p>MAPPING ELEMENTAL LOGIC GATES (AND, OR, NOT PROFILES ENGINE), TRUTH TABLE VERIFICATION BLOCKS, HALF-ADDER ARCHITECTURES, BINARY MATRICES, AND REGISTER ROUTING ARRAYS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: CONVOLUTED NUMERICAL RADIX REPRESENTATIONS</h4>
+                        <p>CONVERSION SCHEMES PARSING BINARY TO LOGICAL HEXADECIMAL FIELDS, OCTAL BASE VALUES RADIX TRANSLATIONS, TWOS COMPLEMENT CORRECTION STRATEGIES, AND SIGNED SIGN BIT BARS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: STRUCTURAL ALGORITHMIC STATE PSEUDOCODES</h4>
+                        <p>COMPULSORY RUN METRICS TARGETING SYSTEM DRY-RUN TESTING SCHEMES, SORT FLOWCHARTS ASSEMBLY DESIGNS, BUBBLE SORT LOGIC TRACES, AND FINITE AUTOMATA DIAGRAM PATHWAYS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: LINEAR DATA ARRAY INFRASTRUCTURE METRICS</h4>
+                        <p>INDEX ALLOCATION STRATEGIES ASSIGNED INDIVIDUALLY TO SINGLE-DIMENSIONAL STORAGE VECTORS, TRAVERSAL RUN OPERATIONS, SEARCH INJECTION CHECKS, AND BOUNDARY TRUNCATION LAWS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: SYSTEM DEVELOPMENT FLOWS &amp; INTERNET LAYOUT PROTOCOLS</h4>
+                        <p>OPERATIONAL SYSTEM LIFECYCLE (SDLC STEPS RUN PROFILE), MODEM PARSING RATIOS, TCP/IP CONVERSIONS MAPS, AND NETWORK PACKET FRAME CONTEXT ARCHITECTURES.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 13. Commercial Applications -->
+            <details class="syllabus-subject-card">
+                <summary>📊 COMMERCIAL APPLICATIONS 📊</summary>
+                <div class="syllabus-inner-box">
+                    <div class="syllabus-unit">
+                        <h4>UNIT I: STRUCTURAL ECO-SYSTEM OF RETAIL &amp; OPERATIONAL COMMERCE SYSTEM</h4>
+                        <p>ANALYSIS MATRIX MAP INVESTIGATING BUSINESS DOMAIN VENTURES, CAPITAL GAIN GENERATORS, PARTNERSHIP ASSET POOLS, AND OUTSOURCING LOGISTICS OPERATIONS CHANNELS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT II: FISCAL COMPILATIONS ACCOUNTANCY ENGINE STRUCTURES</h4>
+                        <p>STRICT CONSTRAINTS GOVERNING DOUBLE-ENTRY LEDGER BALANCE GENERATIONS, TRIAL BALANCE RECONCILIATION INJECTIONS, ASSET DEPRECIATION SCALES, AND CASH FLOW ARRAYS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT III: HUMAN RESOURCE MANAGEMENT COMPLIANCE FRAMEWORKS</h4>
+                        <p>ORGANIZATIONAL RECRUITMENT SELECTION PIPELINES, WORKPLACE ORIENTATION STRATEGIES, LABOUR PERFORMANCE APPRAISAL CRITERIA, AND INCENTIVE MODULATION SYSTEMS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT IV: MARKETING ENGINE OPTIMIZATION &amp; LOGISTICS NETWORKS</h4>
+                        <p>DECONSTRUCT INTEGRATED PRODUCT LIFECYCLE CHANNELS (4P MATRIX VALUATION), PRICING PARITY BALANCES, PROMOTIONAL ADVERTISING CHANNELS, AND RETAIL CHAIN ARRAYS.</p>
+                    </div>
+                    <div class="syllabus-unit">
+                        <h4>UNIT V: CONSUMER RIGHTS SAFETY COMPLIANCE STATUTES</h4>
+                        <p>LEGAL THRESHOLDS OF THE CONSUMER PROTECTION DIRECTIVES ACT SYSTEM, COMPLAINT RESOLUTION FORUMS, UNFAIR PRACTICE MITIGATION SCHEMES, AND ADULTERATION MONITORING VECTORS.</p>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+    </div>
+    
+    <!-- ===========================            
+     VIEW : OFFICIAL MARKS DISTRIBUTION & REGULATORY FRAMEWORK            
+=========================== -->      
+<div id="marks-view" class="page-view">      
+    <div class="static-content">      
+        <div style="            
+            background:linear-gradient(180deg,
+#ffffff 0%,
+#f0fdf4 12%,
+#dcfce7 26%,
+#dbeafe 42%,
+#ede9fe 58%,
+#fef3c7 74%,
+#fee2e2 88%,
+#ffffff 100%);
+            padding:40px;            
+            border-radius:18px;            
+            color:#064e3b;            
+            text-align:center;            
+            box-shadow:0 12px 35px rgba(0,0,0,.18);            
+            margin-bottom:30px;            
+        ">      
+            <h2 style="margin:0;font-size:40px;letter-spacing:1px;text-transform:uppercase;">            
+                COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS            
+            </h2>      
+            <p style="font-size:30px;margin-top:10px;line-height:1.6;opacity:0.95;font-weight:500;">            
+CLASS – IX COMPREHENSIVE BLUEPRINT SCHEME OF EXAMINATION. [ACADEMIC YEAR – (2027) REVISED FRAMEWORK] 
+            </p>      
+        </div>      
+
+        <div class="info-block" style="background:linear-gradient(180deg,
+#ffffff 0%,
+#f8fffb 40%,
+#f0fdf4 100%);; padding:28px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.06); margin-bottom:30px; border:1px solid #e2e8f0;">      
+            <h3 style="margin-top:0;color:#065f46;font-size:40px;letter-spacing:0.5px;">            
+                I. PREAMBLE, STATUTORY AUTHORITY, & REGULATORY EVALUATION MANDATE            
+            </h3>      
+            <p style="font-size:20px;line-height:1.9;color:#334155;text-align:justify;">      
+                Pursuant to the comprehensive educational statutes, directives, and administrative regulations promulgated by the Council for the Indian School Certificate Examinations (CISCE), New Delhi, the formal assessment paradigm for Class IX candidates is structurally formulated to rigorously evaluate intellectual aptitude, cognitive proficiency, practical experimentation capabilities, and continuous scholastic development. Every registered curricular discipline carries a uniform maximum aggregate valuation of exactly <b>100 Marks</b>. The holistic evaluation architecture bifurcates systematically into external terminal examinations and internal formative assessments, governed strictly by the foundational syllabi, curriculum specifications, and pedagogical directives established under the 2027 structural framework.      
+            </p>      
+        </div>      
+
+        <div style="overflow-x:auto; margin-bottom:30px;">
+<table style="            
+width:100%;            
+border-collapse:collapse;            
+font-size:30px;            
+background:linear-gradient(180deg,#ffffff 0%,#f8fffc 100%);
+border-radius:15px;            
+overflow:hidden;            
+box-shadow:0 8px 28px rgba(0,0,0,.12);            
+">
+<thead>
+<tr style="            
+background:linear-gradient(135deg,#064e3b,#059669);            
+color:white;            
+position:sticky;            
+top:0;            
+">
+<th style="padding:22px 15px;text-align:center;font-weight:600;">SERIAL NUMBER</th>
+<th style="padding:22px 140px;text-align:center;font-weight:600;">NAME OF THE SUBJECT</th>
+<th style="padding:22px 25px;text-align:center;font-weight:600;">THEORY MARKS</th>
+<th style="padding:22px 25px;text-align:center;font-weight:600;">INTERNAL ASSESSMENT MARKS</th>
+<th style="padding:22px 25px;text-align:center;font-weight:600;">TOTAL AGGREGATE MARKS</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>1</b></td>
+<td align="center" style="padding:18px;"><b>English Language (Paper – 1)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>2</b></td>
+<td align="center" style="padding:18px;"><b>English Literature (Paper – 2)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>3</b></td>
+<td align="center" style="padding:18px;"><b>Second Language – (Hindi)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>4</b></td>
+<td align="center" style="padding:18px;"><b>Second Language – (Telugu)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>5</b></td>
+<td align="center" style="padding:18px;"><b>Mathematics</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>6</b></td>
+<td align="center" style="padding:18px;"><b>Physics (Science Paper – 1)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>7</b></td>
+<td align="center" style="padding:18px;"><b>Chemistry (Science Paper – 2)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>8</b></td>
+<td align="center" style="padding:18px;"><b>Biology (Science Paper – 3)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>9</b></td>
+<td align="center" style="padding:18px;"><b>History & Civics (HCG Paper – 1)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>10</b></td>
+<td align="center" style="padding:18px;"><b>Geography (HCG Paper – 2)</b></td>
+<td align="center">80M</td>
+<td align="center">20M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>11</b></td>
+<td align="center" style="padding:18px;"><b>Computer Applications</b></td>
+<td align="center">100M</td>
+<td align="center">100M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>12</b></td>
+<td align="center" style="padding:18px;"><b>Computer Science</b></td>
+<td align="center">100M</td>
+<td align="center">–N–</td>
+<td align="center"><b>100M</b></td>
+</tr>
+<tr style="background:linear-gradient(90deg,#f0fdf4 0%,#ecfeff 100%); border-bottom:1px solid #e2e8f0;">
+<td align="center" style="padding:18px;"><b>13</b></td>
+<td align="center" style="padding:18px;"><b>Commercial Applications</b></td>
+<td align="center">100M</td>
+<td align="center">100M</td>
+<td align="center"><b>100M</b></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        <div style="            
+            padding:28px;            
+            background:linear-gradient(180deg,
+#ffffff 0%,
+#f8fafc 30%,
+#f0fdf4 70%,
+#ecfeff 100%);            
+            border-left:7px solid #059669;            
+            border-radius:14px;            
+            box-shadow:0 4px 15px rgba(0,0,0,.03);
+            border:1px solid #e2e8f0;
+            margin-bottom:30px;
+        ">      
+            <h3 style="margin-top:0;color:#065f46;font-size:40px;letter-spacing:0.5px;">            
+                II. STATUTORY INSTRUCTIONS, PROTOCOLS, & MANDATORY GUIDELINES            
+            </h3>      
+            <ul style="line-height:2.2;font-size:20px;color:#334155;margin-bottom:0;padding-left:20px;">      
+                <li><b>Aggregate Uniformity Mandate:</b> The cumulative evaluation maximum for each of the thirteen registered subject disciplines stands strictly unalterable at an aggregate total of exactly <b>100 Marks</b>, non-negotiable across all affiliated educational institutions.</li>      
+                <li><b>External Examination Parameters:</b> Conventional theoretical and humanities disciplines are subjected to an external board-pattern terminal examination weighted at <b>80 Marks</b>, whereas professional/technical electives such as Computer Applications and Computer Science incorporate integrated practical evaluation methodologies scaled up directly to <b>100 Marks</b>.</li>      
+                <li><b>Formative Internal Allocation Protocols:</b> The designated <b>20 Marks</b> component assigned to core and elective subjects must be distributed explicitly across continuous internal evaluations, certified laboratory journals, structured project portfolios, viva-voce interactions, or oral-aural performance metrics as strictly prescribed by the Council.</li>      
+                <li><b>Institutional Compliance & Record Integrity:</b> Affiliated educational institutions and designated institutional heads are statutorily bound to execute, record, audit, and preserve internal assessments with absolute transparency and integrity, adhering strictly to timeline schedules, evaluation rubrics, and reporting protocols published by the CISCE board administration.</li>      
+                <li><b>Curricular Reference & Specimen Directives:</b> Candidates, subject educators, and academic coordinators are strongly advised to cross-reference specific assessment criteria, practical project guidelines, structural parameters, and sub-topic weightages through official syllabi, circulars, and specimen question papers issued directly by the Council.</li>      
+                <li><b>Mandatory Promotion & Attendance Thresholds:</b> In alignment with the comprehensive regulatory framework, candidates must secure a minimum passing grade across all specified components and satisfy institutional attendance requirements to qualify for academic promotion to subsequent grade levels.</li>      
+            </ul>      
+        </div>      
+    </div>      
+</div>
+
+
+
+
+
+    <!-- VIEW 4: RESOURCES -->
+    <div id="resource-view" class="page-view">
+        <div class="static-content">
+            <h2>Academic Resources &amp; Regulations</h2>
+            <p>This centralized repository provides access to downloadable course syllabi, official board regulation handbooks, and standard marking blueprints. Maintaining transparent evaluation guidelines remains a priority, and this hub serves as the verified source for current academic parameters.</p>
+            
+            <p>School administrators and educators are requested to verify their active curriculum schedules against the models provided here. This preserves alignment with the official question patterns and grading metrics set by the board.</p>
+
+            <h3>Available Framework Documents &amp; Repositories</h3>
+            <ul>
+                <li><strong>Rules, Directives and Internal Assessment Guidelines:</strong> The definitive administrative handbook detailing candidate code directives, school compliance protocols, internal project parameters, and assessment calendars.</li>
+                <li><strong>Syllabus Architecture Guidelines Framework:</strong> A clear, unit-by-unit syllabus breakdown detailing course topics, estimated class hours, and specific student learning objectives for Class IX.</li>
+                <li><strong>Specimen Project Portfolios &amp; Question Matrix Guides:</strong> Exemplar question sets, past exam layouts, and clear project evaluation templates designed to guide students toward optimal presentation standards.</li>
+                <li><strong>Regional Operational Protocols:</strong> System directives for regional heads governing registration entry verification, answer script routing, and approved academic accommodation requests.</li>
+            </ul>
+
+            <div class="info-block">
+                <strong>Notice on Document Control :</strong> All digital files on this portal are updated live for the 2027 cycle. Downloaded local files should be cross-checked regularly against online updates to ensure total accuracy.
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 5: PREVIOUS YEARS QUESTION PAPERS -->
+    <div id="pyqp-view" class="page-view">
+        <div class="static-content">
+            <h2>Previous Years Question Papers</h2>
+            <p>Access the consolidated archival index of previous examination question prints, structured board test archives, and past conceptual evaluators. Practising these actual papers prepares students for formatting demands, temporal constraints, and subject question weights.</p>
+            
+            <div class="info-block">
+                <strong>Preparation Protocol Blueprint :</strong> Students are requested to complete these sample evaluation files under strict mock examination timers to maximize logical precision and stress endurance.
+            </div>
+
+            <div class="cisce-card" style="margin-top: 30px;">
+                <div class="card-header"><h2>ARCHIVAL REPOSITORY RELEASES</h2></div>
+                <ul class="feed-list" id="pyqp-container">
+                    <li class="no-data-placeholder">NO PREVIOUS YEARS QUESTION PAPERS HAVE BEEN UPLOADED AT THIS MOMENT.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 6: 2027 QUESTION PAPERS -->
+    <div id="qp2027-view" class="page-view">
+        <div class="static-content">
+            <h2>(2027) ACADEMIC QUESTION PAPERS</h2>
+            <p>Access the consolidated archival index of previous examination question prints, structured board test archives, and past conceptual evaluators. Practising these actual papers prepares students for formatting demands, temporal constraints, and subject question weights.</p>
+            
+            <div class="info-block">
+                <strong>Preparation Protocol Blueprint :</strong> Students are requested to complete these sample evaluation files under strict mock examination timers to maximize logical precision and stress endurance.
+            </div>
+
+            <div class="cisce-card" style="margin-top: 30px;">
+                <div class="card-header"><h2>(2027) QUESTION PAPERS REPOSITORY</h2></div>
+                <ul class="feed-list" id="qp2027-container">
+                    <li class="no-data-placeholder">NO (2027) ACADEMIC QUESTION PAPERS HAVE BEEN UPLOADED AT THIS MOMENT.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 7: FAQ SECTION -->
+    <div id="faq-view" class="page-view">
+        <div class="static-content">
+            <h2>FREQUENTLY ASKED QUESTIONS (FAQ)</h2>
+
+            <details>
+<summary>1. WHAT IS THE CISCE CLASS IX BOARD EXAMINATION?</summary>
+<p>THE CLASS IX BOARD EXAMINATION ASSESSES STUDENTS BASED ON THE PRESCRIBED CISCE CURRICULUM.</p>
+</details>
+
+<details>
+<summary>2. WHO CAN APPEAR FOR THE EXAMINATION?</summary>
+<p>ONLY STUDENTS ENROLLED IN AFFILIATED CISCE SCHOOLS ARE ELIGIBLE.</p>
+</details>
+
+<details>
+<summary>3. IS REGISTRATION MANDATORY?</summary>
+<p>YES. ALL ELIGIBLE STUDENTS MUST COMPLETE REGISTRATION THROUGH THEIR SCHOOL.</p>
+</details>
+
+<details>
+<summary>4. WHO REGISTERS THE STUDENT?</summary>
+<p>THE SCHOOL COMPLETES THE REGISTRATION PROCESS ON BEHALF OF THE STUDENT.</p>
+</details>
+
+<details>
+<summary>5. HOW CAN I VERIFY MY REGISTRATION?</summary>
+<p>CONTACT YOUR SCHOOL TO CONFIRM YOUR REGISTRATION DETAILS.</p>
+</details>
+
+<details>
+<summary>6. WHERE CAN I DOWNLOAD THE SYLLABUS?</summary>
+<p>THE LATEST SYLLABUS IS AVAILABLE IN THE RESOURCES SECTION.</p>
+</details>
+
+<details>
+<summary>7. WHERE CAN I FIND THE EXAM PATTERN?</summary>
+<p>THE EXAM PATTERN IS AVAILABLE UNDER THE ASSESSMENT SECTION.</p>
+</details>
+
+<details>
+<summary>8. HOW MANY SUBJECTS ARE INCLUDED?</summary>
+<p>THE SUBJECTS ARE PRESCRIBED BY THE CISCE CURRICULUM ADOPTED BY YOUR SCHOOL.</p>
+</details>
+
+<details>
+<summary>9. ARE INTERNAL ASSESSMENTS COMPULSORY?</summary>
+<p>YES. INTERNAL ASSESSMENTS FORM AN IMPORTANT PART OF THE EVALUATION.</p>
+</details>
+
+<details>
+<summary>10. WHO CONDUCTS INTERNAL ASSESSMENTS?</summary>
+<p>THEY ARE CONDUCTED BY THE RESPECTIVE SCHOOL.</p>
+</details>
+
+<details>
+<summary>11. CAN I CHANGE MY SUBJECTS?</summary>
+<p>SUBJECT CHANGES ARE SUBJECT TO SCHOOL AND BOARD GUIDELINES.</p>
+</details>
+
+<details>
+<summary>12. WHERE CAN I FIND OFFICIAL NOTICES?</summary>
+<p>ALL OFFICIAL NOTICES ARE PUBLISHED IN THE ANNOUNCEMENTS AND NOTICES SECTION.</p>
+</details>
+
+<details>
+<summary>13. HOW OFTEN IS THE WEBSITE UPDATED?</summary>
+<p>THE WEBSITE IS UPDATED WHEN NEW INFORMATION IS OFFICIALLY RELEASED.</p>
+</details>
+
+<details>
+<summary>14. ARE PDF DOCUMENTS OFFICIAL?</summary>
+<p>YES, PDFS PUBLISHED ON THE WEBSITE ARE OFFICIAL DOCUMENTS.</p>
+</details>
+
+<details>
+<summary>15. CAN I ACCESS THE WEBSITE ON MOBILE?</summary>
+<p>YES. THE WEBSITE IS DESIGNED TO WORK ON MOBILE DEVICES.</p>
+</details>
+
+<details>
+<summary>16. IS AN INTERNET CONNECTION REQUIRED?</summary>
+<p>YES. AN ACTIVE INTERNET CONNECTION IS REQUIRED.</p>
+</details>
+
+<details>
+<summary>17. HOW CAN I CONTACT MY SCHOOL?</summary>
+<p>PLEASE CONTACT YOUR SCHOOL THROUGH ITS OFFICIAL CONTACT DETAILS.</p>
+</details>
+
+<details>
+<summary>18. HOW ARE MARKS CALCULATED?</summary>
+<p>MARKS ARE CALCULATED AS PER THE BOARD'S APPROVED EVALUATION SCHEME.</p>
+</details>
+
+<details>
+<summary>19. WHAT HAPPENS IF I MISS AN EXAM?</summary>
+<p>PLEASE CONTACT YOUR SCHOOL IMMEDIATELY FOR FURTHER GUIDANCE.</p>
+</details>
+
+<details>
+<summary>20. WHERE CAN I VIEW RESULTS?</summary>
+<p>RESULTS WILL BE AVAILABLE THROUGH THE OFFICIAL RESULTS SECTION WHEN RELEASED.</p>
+</details>
+
+<details>
+<summary>21. CAN RESULTS BE RECHECKED?</summary>
+<p>IF A RECHECKING PROCESS IS ANNOUNCED, DETAILS WILL BE PUBLISHED ON THE WEBSITE.</p>
+</details>
+
+<details>
+<summary>22. HOW DO I DOWNLOAD IMPORTANT CIRCULARS?</summary>
+<p>CLICK THE PDF LINK PROVIDED IN THE NOTICES SECTION.</p>
+</details>
+
+<details>
+<summary>23. WHAT SHOULD I DO IF A PDF DOES NOT OPEN?</summary>
+<p>TRY REFRESHING THE PAGE OR DOWNLOADING THE DOCUMENT AGAIN.</p>
+</details>
+
+<details>
+<summary>24. IS MY INFORMATION SECURE?</summary>
+<p>THE WEBSITE USES APPROPRIATE SECURITY MEASURES TO HELP PROTECT STORED INFORMATION.</p>
+</details>
+
+<details>
+<summary>25. WHO SHOULD I CONTACT FOR TECHNICAL SUPPORT?</summary>
+<p>CONTACT YOUR SCHOOL OR THE OFFICIAL SUPPORT CONTACTS PROVIDED ON THE WEBSITE.</p>
+</details>
+<details>
+<summary>26. WHAT IS THE MEDIUM OF INSTRUCTION?</summary>
+<p>THE MEDIUM OF INSTRUCTION IS DETERMINED BY THE AFFILIATED SCHOOL.</p>
+</details>
+
+<details>
+<summary>27. ARE CALCULATORS ALLOWED IN THE EXAMINATION?</summary>
+<p>ONLY IF PERMITTED UNDER THE BOARD'S EXAMINATION RULES.</p>
+</details>
+
+<details>
+<summary>28. CAN STUDENTS USE ROUGH SHEETS?</summary>
+<p>ROUGH WORK SHOULD BE DONE AS PER THE EXAMINATION INSTRUCTIONS.</p>
+</details>
+
+<details>
+<summary>29. HOW LONG IS EACH EXAMINATION?</summary>
+<p>THE DURATION VARIES ACCORDING TO THE SUBJECT.</p>
+</details>
+
+<details>
+<summary>30. WHAT SHOULD I BRING TO THE EXAMINATION?</summary>
+<p>BRING YOUR HALL TICKET, REQUIRED STATIONERY, AND OTHER PERMITTED ITEMS.</p>
+</details>
+
+<details>
+<summary>31. WHAT ITEMS ARE PROHIBITED?</summary>
+<p>MOBILE PHONES AND OTHER UNAUTHORIZED ELECTRONIC DEVICES ARE NOT PERMITTED.</p>
+</details>
+
+<details>
+<summary>32. WHAT HAPPENS IF I ARRIVE LATE?</summary>
+<p>FOLLOW THE EXAMINATION RULES AND CONTACT THE INVIGILATOR IMMEDIATELY.</p>
+</details>
+
+<details>
+<summary>33. CAN I LEAVE THE EXAM HALL EARLY?</summary>
+<p>ONLY AS PER THE EXAMINATION REGULATIONS.</p>
+</details>
+
+<details>
+<summary>34. HOW ARE ANSWER SCRIPTS EVALUATED?</summary>
+<p>THEY ARE EVALUATED ACCORDING TO THE BOARD'S APPROVED MARKING SCHEME.</p>
+</details>
+
+<details>
+<summary>35. ARE GRACE MARKS AWARDED?</summary>
+<p>ANY APPLICABLE POLICIES ARE DETERMINED BY THE BOARD.</p>
+</details>
+
+<details>
+<summary>36. WHEN WILL MARK SHEETS BE ISSUED?</summary>
+<p>THEY WILL BE ISSUED AFTER THE DECLARATION OF RESULTS.</p>
+</details>
+
+<details>
+<summary>37. CAN I DOWNLOAD MY RESULT ONLINE?</summary>
+<p>IF THE FACILITY IS PROVIDED, IT WILL BE AVAILABLE THROUGH THE OFFICIAL PORTAL.</p>
+</details>
+
+<details>
+<summary>38. WHAT SHOULD I DO IF MY DETAILS ARE INCORRECT?</summary>
+<p>CONTACT YOUR SCHOOL IMMEDIATELY FOR CORRECTION PROCEDURES.</p>
+</details>
+
+<details>
+<summary>39. CAN MY NAME BE CORRECTED?</summary>
+<p>NAME CORRECTIONS ARE SUBJECT TO THE BOARD'S RULES AND REQUIRED DOCUMENTS.</p>
+</details>
+
+<details>
+<summary>40. CAN MY DATE OF BIRTH BE UPDATED?</summary>
+<p>ANY CHANGES MUST FOLLOW THE BOARD'S PRESCRIBED PROCEDURE.</p>
+</details>
+
+<details>
+<summary>41. HOW CAN I RESET MY LOGIN DETAILS?</summary>
+<p>FOLLOW THE RECOVERY OPTIONS AVAILABLE ON THE PORTAL, IF PROVIDED.</p>
+</details>
+
+<details>
+<summary>42. WHY IS THE WEBSITE SLOW?</summary>
+<p>HIGH TRAFFIC DURING MAJOR ANNOUNCEMENTS MAY TEMPORARILY AFFECT PERFORMANCE.</p>
+</details>
+
+<details>
+<summary>43. WHY IS THE WEBSITE UNDER MAINTENANCE?</summary>
+<p>MAINTENANCE IS PERFORMED TO IMPROVE SECURITY, STABILITY, AND PERFORMANCE.</p>
+</details>
+
+<details>
+<summary>44. CAN I ACCESS PREVIOUS YEAR DOCUMENTS?</summary>
+<p>IF AVAILABLE, THEY WILL BE PROVIDED IN THE ARCHIVE OR RESOURCES SECTION.</p>
+</details>
+
+<details>
+<summary>45. HOW CAN I VERIFY AN OFFICIAL NOTICE?</summary>
+<p>ONLY RELY ON INFORMATION PUBLISHED THROUGH THE OFFICIAL WEBSITE.</p>
+</details>
+
+<details>
+<summary>46. DOES THE WEBSITE SUPPORT DIFFERENT BROWSERS?</summary>
+<p>YES. MODERN WEB BROWSERS ARE RECOMMENDED FOR THE BEST EXPERIENCE.</p>
+</details>
+
+<details>
+<summary>47. IS THE WEBSITE AVAILABLE 24×7?</summary>
+<p>THE WEBSITE IS GENERALLY AVAILABLE EXCEPT DURING SCHEDULED MAINTENANCE.</p>
+</details>
+
+<details>
+<summary>48. HOW CAN SCHOOLS RECEIVE IMPORTANT UPDATES?</summary>
+<p>IMPORTANT UPDATES ARE PUBLISHED THROUGH THE OFFICIAL WEBSITE AND CIRCULARS.</p>
+</details>
+
+<details>
+<summary>49. CAN I PRINT DOCUMENTS FROM THE WEBSITE?</summary>
+<p>YES. OFFICIAL PDF DOCUMENTS CAN BE DOWNLOADED AND PRINTED.</p>
+</details>
+
+<details>
+<summary>50. WHERE CAN I FIND THE LATEST BOARD ANNOUNCEMENTS?</summary>
+<p>THE LATEST BOARD ANNOUNCEMENTS ARE AVAILABLE ON THE HOME PAGE OF THE WEBSITE.</p>
+</details>
+<details>
+<summary>51. WHAT IS THE MINIMUM ATTENDANCE REQUIRED?</summary>
+<p>THE REQUIRED ATTENDANCE IS DETERMINED BY THE SCHOOL AND APPLICABLE BOARD GUIDELINES.</p>
+</details>
+
+<details>
+<summary>52. ARE PROJECTS COMPULSORY?</summary>
+<p>YES. PROJECTS MUST BE COMPLETED AS PRESCRIBED BY THE SCHOOL.</p>
+</details>
+
+<details>
+<summary>53. HOW ARE PROJECTS ASSESSED?</summary>
+<p>PROJECTS ARE EVALUATED USING THE CRITERIA PRESCRIBED BY THE SCHOOL.</p>
+</details>
+
+<details>
+<summary>54. ARE PRACTICAL EXAMINATIONS CONDUCTED?</summary>
+<p>PRACTICALS ARE CONDUCTED FOR SUBJECTS WHERE APPLICABLE.</p>
+</details>
+
+<details>
+<summary>55. WHAT SHOULD I DO IF I LOSE MY HALL TICKET?</summary>
+<p>CONTACT YOUR SCHOOL IMMEDIATELY TO OBTAIN ASSISTANCE.</p>
+</details>
+
+<details>
+<summary>56. CAN I CHANGE MY EXAMINATION CENTRE?</summary>
+<p>EXAMINATION CENTRE CHANGES ARE SUBJECT TO THE APPROVAL OF THE COMPETENT AUTHORITY.</p>
+</details>
+
+<details>
+<summary>57. HOW ARE EXAMINATION DATES ANNOUNCED?</summary>
+<p>THE EXAMINATION SCHEDULE IS PUBLISHED THROUGH THE OFFICIAL WEBSITE.</p>
+</details>
+
+<details>
+<summary>58. CAN I DOWNLOAD THE EXAMINATION TIMETABLE?</summary>
+<p>YES. THE TIMETABLE IS AVAILABLE AFTER ITS OFFICIAL RELEASE.</p>
+</details>
+
+<details>
+<summary>59. WHAT SHOULD I DO IF I FORGET MY PASSWORD?</summary>
+<p>USE THE PASSWORD RECOVERY OPTION IF AVAILABLE OR CONTACT YOUR SCHOOL.</p>
+</details>
+
+<details>
+<summary>60. ARE SAMPLE PAPERS AVAILABLE?</summary>
+<p>YES. SAMPLE PAPERS MAY BE PROVIDED IN THE RESOURCES SECTION.</p>
+</details>
+
+<details>
+<summary>61. ARE MODEL QUESTION PAPERS PROVIDED?</summary>
+<p>MODEL QUESTION PAPERS MAY BE PUBLISHED BEFORE THE EXAMINATION.</p>
+</details>
+
+<details>
+<summary>62. HOW CAN I PREPARE FOR THE EXAMINATION?</summary>
+<p>STUDY THE PRESCRIBED SYLLABUS, PRACTISE SAMPLE PAPERS, AND FOLLOW YOUR SCHOOL'S GUIDANCE.</p>
+</details>
+
+<details>
+<summary>63. DOES THE WEBSITE PROVIDE STUDY MATERIALS?</summary>
+<p>STUDY MATERIALS MAY BE AVAILABLE UNDER THE RESOURCES SECTION.</p>
+</details>
+
+<details>
+<summary>64. CAN I DOWNLOAD PREVIOUS YEAR PAPERS?</summary>
+<p>IF AVAILABLE, THEY CAN BE DOWNLOADED FROM THE RESOURCES SECTION.</p>
+</details>
+
+<details>
+<summary>65. HOW ARE GRADES AWARDED?</summary>
+<p>GRADES ARE AWARDED ACCORDING TO THE APPROVED EVALUATION POLICY.</p>
+</details>
+
+<details>
+<summary>66. WHAT SHOULD I DO IF MY RESULT IS WITHHELD?</summary>
+<p>CONTACT YOUR SCHOOL FOR FURTHER INFORMATION AND GUIDANCE.</p>
+</details>
+
+<details>
+<summary>67. CAN I APPLY FOR RECHECKING OF ANSWER SCRIPTS?</summary>
+<p>IF THE BOARD ANNOUNCES A RECHECKING FACILITY, DETAILS WILL BE PUBLISHED ON THE WEBSITE.</p>
+</details>
+
+<details>
+<summary>68. HOW WILL I KNOW ABOUT IMPORTANT UPDATES?</summary>
+<p>CHECK THE HOME PAGE, ANNOUNCEMENTS, AND NOTICES REGULARLY.</p>
+</details>
+
+<details>
+<summary>69. ARE DIGITAL MARK SHEETS VALID?</summary>
+<p>FOLLOW THE BOARD'S OFFICIAL GUIDANCE REGARDING DIGITAL DOCUMENTS.</p>
+</details>
+
+<details>
+<summary>70. CAN SCHOOLS DOWNLOAD OFFICIAL DOCUMENTS?</summary>
+<p>YES. AUTHORIZED DOCUMENTS MAY BE DOWNLOADED THROUGH THE OFFICIAL PORTAL.</p>
+</details>
+
+<details>
+<summary>71. HOW CAN I REPORT A TECHNICAL ISSUE?</summary>
+<p>CONTACT THE OFFICIAL SUPPORT CHANNELS PROVIDED BY YOUR SCHOOL OR THE BOARD.</p>
+</details>
+
+<details>
+<summary>72. ARE WEBSITE SERVICES FREE?</summary>
+<p>MOST INFORMATIONAL SERVICES ARE AVAILABLE WITHOUT ANY CHARGE.</p>
+</details>
+
+<details>
+<summary>73. DOES THE WEBSITE WORK ON TABLETS?</summary>
+<p>YES. THE WEBSITE IS DESIGNED TO SUPPORT MODERN TABLETS AND MOBILE DEVICES.</p>
+</details>
+
+<details>
+<summary>74. HOW OFTEN SHOULD I CHECK THE WEBSITE?</summary>
+<p>VISIT THE WEBSITE REGULARLY TO STAY INFORMED ABOUT THE LATEST OFFICIAL UPDATES.</p>
+</details>
+
+<details>
+<summary>75. WHERE CAN I FIND ADDITIONAL HELP?</summary>
+<p>CONTACT YOUR SCHOOL OR REFER TO THE OFFICIAL SUPPORT INFORMATION PROVIDED ON THE WEBSITE.</p>
+</details>
+<details>
+<summary>76. HOW CAN I OBTAIN MY PASSING CERTIFICATE?</summary>
+<p>PASSING CERTIFICATES ARE ISSUED THROUGH THE AFFILIATED SCHOOL AFTER THE COMPLETION OF THE REQUIRED PROCESS.</p>
+</details>
+
+<details>
+<summary>77. HOW CAN I COLLECT MY ORIGINAL MARK SHEET?</summary>
+<p>ORIGINAL MARK SHEETS ARE DISTRIBUTED THROUGH THE RESPECTIVE SCHOOL.</p>
+</details>
+
+<details>
+<summary>78. CAN I REQUEST A DUPLICATE MARK SHEET?</summary>
+<p>DUPLICATE DOCUMENTS MAY BE ISSUED SUBJECT TO THE APPLICABLE RULES AND PROCEDURES.</p>
+</details>
+
+<details>
+<summary>79. HOW DO I APPLY FOR A DUPLICATE CERTIFICATE?</summary>
+<p>CONTACT YOUR SCHOOL FOR GUIDANCE ON THE PRESCRIBED APPLICATION PROCESS.</p>
+</details>
+
+<details>
+<summary>80. WHAT SHOULD I DO IF MY CERTIFICATE IS DAMAGED?</summary>
+<p>REPORT THE ISSUE TO YOUR SCHOOL AND FOLLOW THE OFFICIAL REPLACEMENT PROCEDURE.</p>
+</details>
+
+<details>
+<summary>81. CAN MY SCHOOL UPDATE MY RECORDS?</summary>
+<p>YES. RECORD UPDATES MUST FOLLOW THE APPROVED PROCEDURE AND REQUIRED DOCUMENTATION.</p>
+</details>
+
+<details>
+<summary>82. WHAT DOCUMENTS MAY BE REQUIRED FOR CORRECTIONS?</summary>
+<p>THE REQUIRED DOCUMENTS DEPEND ON THE TYPE OF CORRECTION REQUESTED.</p>
+</details>
+
+<details>
+<summary>83. HOW CAN I VERIFY MY STUDENT INFORMATION?</summary>
+<p>VERIFY YOUR DETAILS THROUGH YOUR SCHOOL BEFORE THE EXAMINATION.</p>
+</details>
+
+<details>
+<summary>84. WHAT SHOULD I DO IF MY PHOTOGRAPH IS INCORRECT?</summary>
+<p>REPORT THE ISSUE TO YOUR SCHOOL AS SOON AS POSSIBLE.</p>
+</details>
+
+<details>
+<summary>85. WHAT SHOULD I DO IF MY SIGNATURE IS MISSING?</summary>
+<p>CONTACT YOUR SCHOOL TO COMPLETE THE NECESSARY VERIFICATION PROCESS.</p>
+</details>
+
+<details>
+<summary>86. HOW ARE IMPORTANT NOTIFICATIONS PUBLISHED?</summary>
+<p>IMPORTANT NOTIFICATIONS ARE PUBLISHED ON THE OFFICIAL WEBSITE.</p>
+</details>
+
+<details>
+<summary>87. ARE EMAIL NOTIFICATIONS PROVIDED?</summary>
+<p>ANY AVAILABLE NOTIFICATION SERVICES WILL BE ANNOUNCED THROUGH THE OFFICIAL WEBSITE.</p>
+</details>
+
+<details>
+<summary>88. DOES THE WEBSITE PROVIDE ACCESSIBILITY FEATURES?</summary>
+<p>THE WEBSITE IS DESIGNED TO BE ACCESSIBLE ON MODERN DEVICES AND BROWSERS.</p>
+</details>
+
+<details>
+<summary>89. IS MY PERSONAL INFORMATION KEPT CONFIDENTIAL?</summary>
+<p>PERSONAL INFORMATION IS HANDLED IN ACCORDANCE WITH APPLICABLE PRIVACY PRACTICES.</p>
+</details>
+
+<details>
+<summary>90. HOW IS THE WEBSITE PROTECTED?</summary>
+<p>THE WEBSITE IMPLEMENTS APPROPRIATE SECURITY MEASURES TO HELP PROTECT ITS SERVICES.</p>
+</details>
+
+<details>
+<summary>91. WHAT SHOULD I DO IF A LINK DOES NOT WORK?</summary>
+<p>REFRESH THE PAGE OR TRY AGAIN LATER. IF THE ISSUE CONTINUES, CONTACT YOUR SCHOOL.</p>
+</details>
+
+<details>
+<summary>92. CAN I ACCESS THE WEBSITE FROM ANY LOCATION?</summary>
+<p>YES. THE WEBSITE CAN BE ACCESSED FROM ANY LOCATION WITH AN INTERNET CONNECTION.</p>
+</details>
+
+<details>
+<summary>93. DOES THE WEBSITE SUPPORT SECURE BROWSING?</summary>
+<p>USE THE OFFICIAL WEBSITE THROUGH A SECURE CONNECTION WHEN AVAILABLE.</p>
+</details>
+
+<details>
+<summary>94. HOW DO I IDENTIFY AN OFFICIAL ANNOUNCEMENT?</summary>
+<p>ONLY RELY ON INFORMATION PUBLISHED THROUGH THE OFFICIAL WEBSITE.</p>
+</details>
+
+<details>
+<summary>95. WHO MAINTAINS THIS WEBSITE?</summary>
+<p>THE WEBSITE IS MAINTAINED BY THE AUTHORIZED ADMINISTRATIVE TEAM.</p>
+</details>
+
+<details>
+<summary>96. HOW CAN I PROVIDE FEEDBACK?</summary>
+<p>USE THE OFFICIAL FEEDBACK OR CONTACT CHANNELS IF THEY ARE PROVIDED.</p>
+</details>
+
+<details>
+<summary>97. HOW OFTEN IS WEBSITE CONTENT REVIEWED?</summary>
+<p>CONTENT IS UPDATED PERIODICALLY TO KEEP INFORMATION CURRENT AND ACCURATE.</p>
+</details>
+
+<details>
+<summary>98. WHERE CAN I FIND THE LATEST CIRCULARS?</summary>
+<p>THE LATEST CIRCULARS ARE AVAILABLE IN THE ANNOUNCEMENTS OR NOTICES SECTION.</p>
+</details>
+
+<details>
+<summary>99. WHO SHOULD I CONTACT FOR FURTHER ASSISTANCE?</summary>
+<p>PLEASE CONTACT YOUR SCHOOL OR THE APPROPRIATE OFFICIAL SUPPORT CHANNEL.</p>
+</details>
+
+<details>
+<summary>100. WHERE CAN I GET MORE INFORMATION ABOUT THE CISCE CLASS IX BOARD?</summary>
+<p>PLEASE REFER TO THE OFFICIAL WEBSITE, YOUR SCHOOL, AND THE LATEST OFFICIAL NOTICES FOR THE MOST UP-TO-DATE INFORMATION.</p>
+</details>
+<details>
+<summary>101. WHAT IS THE IMPORTANCE OF THE CLASS – IX BOARD EXAMINATION?</summary>
+<p>THE CLASS – IX BOARD EXAMINATION LAYS THE ACADEMIC FOUNDATION FOR HIGHER SECONDARY STUDIES AND PREPARES STUDENTS FOR THE BOARD ENVIRONMENT.</p>
+</details>
+
+<details>
+<summary>102. HOW CAN STUDENTS ACCESS THEIR EXAM SCHEDULE?</summary>
+<p>THE EXAM SCHEDULE IS PUBLISHED DIRECTLY ON THE OFFICIAL PORTAL UNDER THE NOTICES AND ANNOUNCEMENTS SECTION.</p>
+</details>
+
+<details>
+<summary>103. ARE THERE ANY SPECIFIC GUIDELINES FOR PROJECT SUBMISSION?</summary>
+<p>YES, ALL PROJECTS MUST STRICTLY FOLLOW THE GUIDELINES PROVIDED IN THE RESOURCES AND REGULATIONS SECTION.</p>
+</details>
+
+<details>
+<summary>104. WHAT IS THE PASSING PERCENTAGE REQUIRED FOR CLASS – IX?</p>
+<p>STUDENTS MUST ACHIEVE THE MINIMUM QUALIFYING MARKS PRESCRIBED BY THE CISCE EVALUATION POLICY.</p>
+</details>
+
+<details>
+<summary>105. CAN A STUDENT APPLY FOR SCRUTINY OF ANSWER SCRIPTS?</summary>
+<p>SCRUTINY REQUESTS CAN BE FILED THROUGH THE SCHOOL IF A FORMAL PROCESS IS ANNOUNCED BY THE BOARD.</p>
+</details>
+
+<details>
+<summary>106. HOW ARE PRACTICAL MARKS RECORDED?</summary>
+<p>PRACTICAL MARKS ARE ASSESSED BY INTERNAL EXAMINERS AND UPLOADED SECURELY BY THE SCHOOL AUTHORITIES.</p>
+</details>
+
+<details>
+<summary>107. WHAT SHOULD A STUDENT DO IN CASE OF SUDDEN ILLNESS DURING EXAMS?</summary>
+<p>THE SCHOOL PRINCIPAL MUST BE INFORMED IMMEDIATELY ALONG WITH VALID MEDICAL DOCUMENTATION.</p>
+</details>
+
+<details>
+<summary>108. ARE PREVIOUS YEARS PAPERS HELPFUL FOR PREPARATION?</summary>
+<p>YES, PRACTICING PREVIOUS YEARS PAPERS HELPS STUDENTS UNDERSTAND EXAM PATTERNS AND TIME MANAGEMENT.</p>
+</details>
+
+<details>
+<summary>109. WHERE CAN I FIND THE LIST OF APPROVED TEXTBOOKS?</summary>
+<p>THE APPROVED TEXTBOOK LIST IS MENTIONED IN THE SYLLABUS AND CURRICULUM SECTION OF THE PORTAL.</p>
+</details>
+
+<details>
+<summary>110. IS IT MANDATORY TO WEAR THE SCHOOL UNIFORM DURING EXAMINATIONS?</summary>
+<p>YES, STUDENTS MUST WEAR THEIR PRESCRIBED SCHOOL UNIFORM TO THE EXAMINATION CENTRE.</p>
+</details>
+
+<details>
+<summary>111. WHAT WRITING INSTRUMENTS ARE PERMITTED IN THE EXAMINATION HALL?</summary>
+<p>STUDENTS SHOULD USE BLUE OR BLACK BALLPOINT PENS AS SPECIFIED IN THE EXAMINATION INSTRUCTIONS.</p>
+</details>
+
+<details>
+<summary>112. CAN GEOMETRICAL INSTRUMENTS BE SHARED?</summary>
+<p>NO, SHARING OF PENCILS, ERASERS, RULERS, AND GEOMETRICAL INSTRUMENTS IS STRICTLY PROHIBITED.</p>
+</details>
+
+<details>
+<summary>113. HOW ARE INTERNAL GRADES REFLECTED ON THE REPORT CARD?</summary>
+<p>INTERNAL GRADES ARE COMPUTED BASED ON CONTINUOUS EVALUATION THROUGHOUT THE ACADEMIC YEAR.</p>
+</details>
+
+<details>
+<summary>114. WHAT IS THE POLICY ON USE OF UNFAIR MEANS?</summary>
+<p>THE USE OF UNFAIR MEANS LEADS TO IMMEDIATE DISQUALIFICATION AND STRICT DISCIPLINARY ACTION.</p>
+</details>
+
+<details>
+<summary>115. ARE PARENT-TEACHER MEETINGS CONDUCTED REGULARLY?</summary>
+<p>YES, SCHOOLS ORGANIZE REGULAR MEETINGS TO DISCUSS STUDENT PROGRESS AND PERFORMANCE.</p>
+</details>
+
+<details>
+<summary>116. HOW CAN SCHOOLS UPDATE THEIR CONTACT INFORMATION?</summary>
+<p>SCHOOLS MUST SUBMIT OFFICIAL WRITTEN REQUESTS TO THE BOARD HEADQUARTERS FOR RECORD UPDATES.</p>
+</details>
+
+<details>
+<summary>117. CAN PRIVATE CANDIDATES REGISTER FOR THE CLASS – IX BOARD EXAM?</summary>
+<p>NO, REGISTRATION IS EXCLUSIVELY AVAILABLE THROUGH AFFILIATED INSTITUTIONS.</p>
+</details>
+
+<details>
+<summary>118. WHAT IS THE PROCEDURE FOR MIGRATION TO ANOTHER SCHOOL?</summary>
+<p>MIGRATION REQUIRES FORMAL TRANSFER CERTIFICATES AND APPROVAL FROM BOTH INSTITUTIONS.</p>
+</details>
+
+<details>
+<summary>119. ARE THERE ANY SCHOLARSHIPS AVAILABLE FOR CLASS – IX STUDENTS?</summary>
+<p>INFORMATION REGARDING SCHOLARSHIPS IS PUBLISHED VIA OFFICIAL CIRCULARS WHEN APPLICABLE.</p>
+</details>
+
+<details>
+<summary>120. HOW DOES THE PORTAL ENSURE DATA PRIVACY?</summary>
+<p>THE PORTAL USES ENCRYPTION PROTOCOLS TO PROTECT ALL REGISTERED USER AND INSTITUTIONAL DATA.</p>
+</details>
+
+<details>
+<summary>121. WHAT SHOULD BE DONE IF THE ADMIT CARD CONTAINS ERRORS?</summary>
+<p>NOTIFY THE SCHOOL ADMINISTRATION IMMEDIATELY SO THE DETAILS CAN BE CORRECTED BEFORE EXAMS.</p>
+</details>
+
+<details>
+<summary>122. ARE ANSWERS WRITTEN IN PENCIL ACCEPTED?</summary>
+<p>EXCEPT FOR DIAGRAMS AND GRAPHS, ALL ANSWERS MUST BE WRITTEN IN INK.</p>
+</details>
+
+<details>
+<summary>123. HOW LONG BEFORE THE EXAM SHOULD STUDENTS REACH THE CENTRE?</summary>
+<p>STUDENTS ARE ADVISED TO REACH AT LEAST THIRTY MINUTES BEFORE THE SCHEDULED START TIME.</p>
+</details>
+
+<details>
+<summary>124. ARE WATER BOTTLES ALLOWED INSIDE THE EXAMINATION ROOM?</summary>
+<p>TRANSPARENT WATER BOTTLES ARE GENERALLY PERMITTED SUBJECT TO INVIGILATOR APPROVAL.</p>
+</details>
+
+<details>
+<summary>125. WHAT HAPPENS IF AN EXAM DATE COINCIDES WITH A PUBLIC HOLIDAY?</summary>
+<p>THE BOARD WILL ISSUE A REVISED NOTIFICATION AND TIMETABLE IF NECESSARY.</p>
+</details>
+
+<details>
+<summary>126. CAN STUDENTS USE LOGARITHM TABLES DURING MATH EXAMS?</summary>
+<p>LOGARITHM TABLES ARE PROVIDED BY THE EXAM CENTRE WHEN REQUIRED FOR CALCULATIONS.</p>
+</details>
+
+<details>
+<summary>127. HOW ARE PRACTICAL RECORD BOOKS MAINTAINED?</summary>
+<p>PRACTICAL RECORDS MUST BE REGULARLY SIGNED AND CERTIFIED BY THE SUBJECT TEACHER.</p>
+</details>
+
+<details>
+<summary>128. WHAT IS THE ROLE OF THE CHIEF COORDINATOR?</summary>
+<p>THE CHIEF COORDINATOR OVERSEES EXAMINATIONS, REGISTRATION VERIFICATION, AND CENTER OPERATIONS.</p>
+</details>
+
+<details>
+<summary>129. ARE AUDIO-VISUAL AIDS USED IN THE SYLLABUS?</summary>
+<p>SCHOOLS ARE ENCOURAGED TO INCORPORATE DIGITAL TOOLS AS PART OF ENHANCED LEARNING.</p>
+</details>
+
+<details>
+<summary>130. HOW CAN I CHECK PREVIOUS NOTICES FROM PAST MONTHS?</summary>
+<p>PAST NOTICES ARE ARCHIVED WITHIN THE NOTICE AND CIRCULAR REPOSITORY.</p>
+</details>
+
+<details>
+<summary>131. IS THERE A HELPLINE NUMBER FOR TECHNICAL INQUIRIES?</summary>
+<p>SUPPORT CONTACT DETAILS ARE LISTED IN THE FOOTER AND RESOURCES SECTIONS OF THE WEBSITE.</p>
+</details>
+
+<details>
+<summary>132. CAN STUDENTS REQUEST EXTRA TIME FOR WRITING?</summary>
+<p>EXTRA TIME ACCOMMODATIONS ARE GRANTED SOLELY BASED ON VALID MEDICAL OR SPECIAL NEED CERTIFICATES.</p>
+</details>
+
+<details>
+<summary>133. HOW IS THE ACADEMIC CALENDAR STRUCTURED?</summary>
+<p>THE CALENDAR IS DESIGNED TO BALANCE INSTRUCTIONAL HOURS, ASSESSMENTS, AND VACATION PERIODS.</p>
+</details>
+
+<details>
+<summary>134. WHAT IS THE SIGNIFICANCE OF THE BOARD SEAL ON DOCUMENTS?</summary>
+<p>THE OFFICIAL SEAL VERIFIES THE AUTHENTICITY AND LEGAL VALIDITY OF THE ISSUED DOCUMENT.</p>
+</details>
+
+<details>
+<summary>135. ARE CO-CURRICULAR ACTIVITIES GRADED IN CLASS – IX?</summary>
+<p>CO-CURRICULAR ACTIVITIES ARE EVALUATED INTERNALLY TO ENSURE HOLISTIC STUDENT DEVELOPMENT.</p>
+</details>
+
+<details>
+<summary>136. HOW DO TEACHERS SUBMIT INTERNAL ASSESSMENT SCORES?</summary>
+<p>SCORES ARE UPLOADED SECURELY THROUGH THE AUTHORIZED INSTITUTIONAL LOGIN PORTAL.</p>
+</details>
+
+<details>
+<summary>137. WHAT SHOULD A STUDENT DO IF AN ANSWER SCRIPT IS DAMAGED?</summary>
+<p>REPORT TO THE INVIGILATOR IMMEDIATELY FOR OFFICIAL DOCUMENTATION AND REPLACEMENT GUIDELINES.</p>
+</details>
+
+<details>
+<summary>138. CAN SCHOOLS CONDUCT EXAMS OUTSIDE OF THE NOTIFIED DATES?</summary>
+<p>NO, EXAMINATIONS MUST BE CONDUCTED STRICTLY ACCORDING TO THE SCHEDULE ISSUED BY THE BOARD.</p>
+</details>
+
+<details>
+<summary>139. ARE DIGITAL COPIES OF SYLLABUS GUIDES FREE TO DOWNLOAD?</summary>
+<p>YES, ALL OFFICIAL PDF GUIDES PROVIDED ON THE PORTAL ARE FREE FOR EDUCATIONAL USE.</p>
+</details>
+
+<details>
+<summary>140. WHAT CRITERIA DETERMINE SCHOOL AFFILIATION WITH THE BOARD?</summary>
+<p>INFRASTRUCTURE, FACULTY QUALIFICATIONS, AND SAFETY STANDARDS DETERMINE AFFILIATION ELIGIBILITY.</p>
+</details>
+
+<details>
+<summary>141. HOW ARE COMPLAINTS REGARDING QUESTION PAPER ERRORS HANDLED?</summary>
+<p>SCHOOLS CAN SUBMIT FORMAL REPRESENTATIONS TO THE BOARD FOR EXPERT REVIEW.</p>
+</details>
+
+<details>
+<summary>142. CAN STUDENTS BRING SMARTWATCHES INTO THE EXAM HALL?</summary>
+<p>NO, ALL TYPES OF SMARTWATCHES AND DIGITAL WEARABLES ARE STRICTLY PROHIBITED.</p>
+</details>
+
+<details>
+<summary>143. WHAT IS THE PROCEDURE FOR ISSUING A TRANSFER CERTIFICATE?</summary>
+<p>TRANSFER CERTIFICATES ARE ISSUED BY THE SCHOOL UPON COMPLETION OF CLEARANCE FORMALITIES.</p>
+</details>
+
+<details>
+<summary>144. ARE ANSWERS CHECKED FOR PLAGIARISM IN PROJECTS?</summary>
+<p>YES, PROJECT WORK MUST BE ORIGINAL AND REFLECT INDEPENDENT STUDENT RESEARCH.</p>
+</details>
+
+<details>
+<summary>145. HOW DOES THE BOARD COMMUNICATE URGENT ALERTS?</summary>
+<p>URGENT ALERTS ARE BROADCASTED VIA THE LIVE MARQUEE STRIP AND DIALOGUE BOX ON THE HOME PAGE.</p>
+</details>
+
+<details>
+<summary>146. WHAT IS THE POLICY ON ATTENDANCE FOR PRACTICAL CLASSES?</summary>
+<p>A HIGH PERCENTAGE OF ATTENDANCE IN PRACTICAL SESSIONS IS COMPULSORY FOR ELIGIBILITY.</p>
+</details>
+
+<details>
+<summary>147. CAN PARENTS ACCESS THE INSTITUTIONAL DASHBOARD?</summary>
+<p>THE INSTITUTIONAL DASHBOARD IS RESTRICTED TO AUTHORIZED SCHOOL ADMINISTRATORS AND COORDINATORS.</p>
+</details>
+
+<details>
+<summary>148. HOW ARE LANGUAGE PROFICIENCY SKILLS TESTED?</summary>
+<p>LANGUAGE EXAMS EVALUATE GRAMMAR, COMPOSITION, COMPREHENSION, AND ORAL EXPRESSION.</p>
+</details>
+
+<details>
+<summary>149. WHAT STEPS ARE TAKEN TO MAINTAIN EXAM SECURITY?</summary>
+<p>ENCRYPTED DIGITAL QUESTION PAPER DISTRIBUTION AND SECURE LOGIN CREDENTIALS ENSURE TOTAL SECURITY.</p>
+</details>
+
+<details>
+<summary>150. WHERE CAN I FIND THE COMPLETE ARCHIVE OF ALL FAQ ITEMS?</summary>
+<p>ALL FREQUENTLY ASKED QUESTIONS ARE MAINTAINED CONSECUTIVELY WITHIN THIS DEDICATED FAQ SECTION.</p>
+</details>
+
+        </div>
+    </div>
+
+    <!-- Secure Gateway Overlay Modal -->
+    <div class="modal-overlay" id="authPortalModal">
+        <div class="login-box">
+            <h3>CHIEF COORDINATOR'S MANAGEMENT DASHBOARD</h3>
+            <div class="form-group">
+                <label for="secretPasscode">CHIEF COORDINATOR'S OFFICIAL PASSKEY</label>
+                <input type="password" id="secretPasscode" class="form-input" placeholder="****************************" style="letter-spacing: 0.3em; text-align: center;">
+            </div>
+            <button class="btn-action" style="width: 100%;" onclick="verifySecureKey()">AUTHORIZE SECURE TERMINAL</button>
+            <button class="btn-action" onclick="closeAuthBox()" style="background:none; color: var(--text-muted); margin-top: 15px; font-weight: 1000; font-size: 15px; width: 100%; box-shadow: none;">ABORT SECURE CONNECTION</button>
+        </div>
+    </div>
+
+    <!-- Footer System Frame -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4 style="color: var(--cisce-gold-bright); margin-bottom: 15px; font-size: 28px; text-transform: uppercase; letter-spacing: 0.05em;">CISCE CLASS – IX PORTAL INFRASTRUCTURE</h4>
+                <p style="color: #a7f3d0; line-height: 1.7; max-width: 600px;">MANAGING PRECISE ASSESSMENT SYSTEMS, INSTITUTIONAL RULES, AND SECURE DATA NETWORKS FOR ALL REGISTERED SECONDARY INSTITUTIONS.</p>
+            </div>
+            <div>
+                <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 30px; text-transform: uppercase; letter-spacing: 0.05em;">QUICK NAVIGATION</h4>
+                <p style="line-height: 2;"><a href="#" style="color: #a7f3d0; text-decoration: none;">MAIN BOARD WEBSITE</a><br><a href="#" style="color: #a7f3d0; text-decoration: none;"></a></p>
+            </div>
+            <div>
+                <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 30px; text-transform: uppercase; letter-spacing: 0.05em;">CISCE MAIN OFFICE</h4>
+                <p style="color: #a7f3d0; line-height: 1.6;">12-72-21-32-67/A, ROAD NUMBER – 2, RAVINDRA NAGAR, HABSIGUDA MAIN CENTRAL OFFICE (CISCE CLASS – IX), HYDERABAD – 500013, TELANGANA, INDIA.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>©️ 2027. COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS ©️</div>
+            <div>
+                <button
+class="keyhole-trigger"
+onmousedown="startDashboardHold()"
+onmouseup="cancelDashboardHold()"
+onmouseleave="cancelDashboardHold()"
+ontouchstart="startDashboardHold()"
+ontouchend="cancelDashboardHold()">
+🔐
+</button>
+            </div>
+        </div>
+        <div id="dateTimeFooter" style="width:98%; background: linear-gradient(135deg, #fef3c7 0%, #dcfce7 100%); color:#064e3b; text-align:center; padding:15px 10px; font-size:40px; font-weight:bold; letter-spacing:1px; margin:30px auto 0 auto; border-radius:12px; border: 3px solid var(--cisce-gold-bright);">
+            🗓️ DATE : --/--/---- | ⏰ TIME : --:--:--
+        </div>
+        <hr style="margin:20px 0;">
+
+<div style="text-align:center;font-size:40px;font-weight:900;">
+🌐 PORTAL LAST UPDATED ON
+<span id="portalLastUpdated">NOT AVAILABLE</span>
+<span id="live-badge-status"></span>
+</div>
+    </footer>
+
+    <!-- Script Logic Processing Engine -->
+    <script>
+    /* ========= MAINTENANCE SETTINGS ========= */
+
+let maintenanceStartHour = 23;
+let maintenanceStartMinute = 59;
+
+let maintenanceEndHour = 23;
+let maintenanceEndMinute = 59;
+
+const MAINTENANCE_PASSWORD = "CISCE9TSSJPSMLKADMIN2027050STJOSEPHSCHOOLMALAKPETHYDERABAD500036888";
+
+let maintenanceForce = false;
+function isMaintenanceMode() {
+
+    if (maintenanceForce) return true;
+
+    const now = new Date();
+
+    const startTime = new Date(now);
+    startTime.setHours(
+        maintenanceStartHour,
+        maintenanceStartMinute,
+        0,
+        0
+    );
+
+    const endTime = new Date(now);
+    endTime.setHours(
+        maintenanceEndHour,
+        maintenanceEndMinute,
+        0,
+        0
+    );
+
+    // Maintenance crosses midnight (e.g. 18:00 → 05:00)
+    if (startTime > endTime) {
+        return now >= startTime || now < endTime;
+    }
+
+    // Maintenance within the same day
+    return now >= startTime && now < endTime;
+}
+function checkMaintenanceMode(){
+
+    let maintenancePage=document.getElementById("maintenancePage");
+
+    let website=document.getElementById("websiteContent");
+
+    let disableBtn=document.getElementById("disableMaintenanceBtn");
+
+    if(isMaintenanceMode()){
+
+        maintenancePage.style.display="block";
+
+        website.style.display="none";
+
+        disableBtn.style.display="inline-block";
+
+    }else{
+
+        maintenancePage.style.display="none";
+
+        website.style.display="block";
+
+    }
+
+}
+function disableMaintenance(){
+
+    let password=prompt("PLEASE ENTER THE CISCE CHIEF COORDINATOR'S SECURED OFFICIAL PASSKEY.");
+
+    if(password===MAINTENANCE_PASSWORD){
+
+        maintenanceForce=false;
+
+        maintenanceEndHour=0;
+
+        maintenanceEndMinute=0;
+
+        alert("MAINTENANCE MODE HAS BEEN DISABLED SUCCESSFULLY.");
+
+        checkMaintenanceMode();
+
+    }else{
+
+        alert("YOU HAVE ENTERED THE WRONG PASSKEY AND THE SERVER IS SETTLING DOWN THE BOTS SET BY YOU TO ZERO.");
+
+    }
+
+}
+        const PRIVILEGED_PASS_TOKEN = "CISCE9TSSJPSMLKADMIN2027050STJOSEPHSCHOOLMALAKPETHYDERABAD500036888";
+        let localDatabase = null;
+        let isAdminAuthenticated = false;
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedTickerText();
+            startFooterClock();
+            startCountdowns();
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+      
+
+        function startFooterClock() {
+
+    function updateDateTime() {
+
+        const now = new Date();
+
+        const options = {
+            timeZone: "Asia/Kolkata",
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        };
+
+        const parts = new Intl.DateTimeFormat("en-IN", options)
+            .formatToParts(now);
+
+        let day = "", month = "", year = "";
+        let hour = "", minute = "", second = "", dayPeriod = "";
+
+        parts.forEach(p => {
+            if (p.type === "day") day = p.value;
+            if (p.type === "month") month = p.value.toUpperCase();
+            if (p.type === "year") year = p.value;
+            if (p.type === "hour") hour = p.value;
+            if (p.type === "minute") minute = p.value;
+            if (p.type === "second") second = p.value;
+            if (p.type === "dayPeriod") {
+                dayPeriod = p.value
+                    .toUpperCase()
+                    .replace("AM", "A.M.")
+                    .replace("PM", "P.M.");
+            }
+        });
+
+        document.getElementById("dateTimeFooter").innerHTML =
+            `| 🗓️ DATE : ${month} ${day}, ${year} 🗓️ | ⏰ TIME : ${hour}:${minute}:${second} ${dayPeriod} (IST) ⏰|`;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+}
+// ==========================================
+// REGISTRATION POSTPONEMENT CONTROL
+// ==========================================
+
+// TRUE  = REGISTRATION POSTPONED
+// FALSE = ORIGINAL COUNTDOWN ENABLED
+
+let registrationPostponed = true;
+        function startCountdowns() {
+
+    // ==========================================
+    // CHECK REGISTRATION POSTPONEMENT STATUS
+    // ==========================================
+
+    const postponedBox =
+        document.getElementById("registrationPostponedBox");
+
+    const regStartSection =
+        document.getElementById("regStartSection");
+
+    const regCloseSection =
+        document.getElementById("regCloseSection");
+
+    if (registrationPostponed === true) {
+
+        // SHOW POSTPONEMENT MESSAGE
+        if (postponedBox) {
+            postponedBox.style.display = "block";
+        }
+
+        // HIDE ORIGINAL COUNTDOWN
+        if (regStartSection) {
+            regStartSection.style.display = "none";
+        }
+
+        if (regCloseSection) {
+            regCloseSection.style.display = "none";
+        }
+
+        return;
+    }
+
+    // ==========================================
+    // ORIGINAL COUNTDOWN — DO NOT CHANGE
+    // ==========================================
+
+    if (postponedBox) {
+        postponedBox.style.display = "none";
+    }
+
+    // REGISTRATION START
+    const regStart =
+        new Date("August 11, 2026 09:59:59").getTime();
+
+    // REGISTRATION CLOSE
+    const target1 =
+        new Date("September 15, 2026 23:59:59").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const regCloseSection = document.getElementById("regCloseSection");
+        const regStartSection = document.getElementById("regStartSection");
+
+        if (now < regStart) {
+
+    regCloseSection.style.display = "none";
+    updateTimer("count_reg_start", regStart - now);
+
+} else if (now >= regStart && now <= target1) {
+
+    document.getElementById("count_reg_start").innerText = "🟢 REGISTRATIONS ARE NOW LIVE 🟢";
+    regCloseSection.style.display = "block";
+    updateTimer("count1", target1 - now);
+
+} else {
+
+    regStartSection.style.display = "none";
+
+regCloseSection.style.display = "block";
+
+document.getElementById("count1").innerText = "🔴 REGISTRATIONS ARE NOW CLOSED 🔴";
+}
+
+    }, 1000);
+}
+
+function updateTimer(elementId, distance) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    if (distance <= 0) {
+        element.innerText = "EVENT COMPLETED";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    element.innerText =
+    `${days} DAY${days !== 1 ? "S" : ""} : ` +
+    `${hours} HOUR${hours !== 1 ? "S" : ""} : ` +
+    `${minutes} MINUTE${minutes !== 1 ? "S" : ""} : ` +
+    `${seconds} SECOND${seconds !== 1 ? "S" : ""}`;
+}
+
+// Start the countdowns
+startCountdowns();
+        function initializeIndexedDB() {
+
+    if (!window.indexedDB) {
+        console.error("IndexedDB is not supported by this browser.");
+        return;
+    }
+
+    // Open the existing Version 2 database
+    const request = indexedDB.open("CISCE_ClassIX_2027_CoreDB", 2);
+
+    request.onupgradeneeded = (event) => {
+        const db = event.target.result;
+
+        if (!db.objectStoreNames.contains("portalItems")) {
+            db.createObjectStore("portalItems", {
+                keyPath: "id",
+                autoIncrement: true
+            });
+        }
+    };
+
+    request.onsuccess = (event) => {
+        localDatabase = event.target.result;
+
+        console.log("✅ IndexedDB connected successfully.");
+
+        if (typeof renderSavedPortalItems === "function") {
+            renderSavedPortalItems();
+        }
+
+        localDatabase.onversionchange = () => {
+            localDatabase.close();
+            console.warn("Database version changed. Please reload the page.");
+        };
+    };
+
+    request.onblocked = () => {
+        console.warn("Database upgrade blocked. Close other tabs using this website and try again.");
+    };
+
+    request.onerror = (event) => {
+        console.error("❌ IndexedDB engine connection failure.");
+        console.error("Error Name:", event.target.error.name);
+        console.error("Error Message:", event.target.error.message);
+    };
+}
+
+// Initialize the database
+initializeIndexedDB();
+
+        function loadSavedTickerText() {
+            const savedText = localStorage.getItem('cisce_ticker_msg_2027');
+            if(savedText) {
+                document.getElementById('ticker-object').innerText = savedText;
+                document.getElementById('dialogue-display-body').innerText = savedText;
+                document.getElementById('adminTickerInput').value = savedText;
+            } else {
+                const defaultFallback = "📢🔔 OFFICIAL ANNOUNCEMENT 🔔📢 | 🏛️ THE COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS (CISCE) HEREBY NOTIFIES THAT THE ONLINE REGISTRATION PROCESS FOR THE CISCE CLASS – IX BOARD EXAMINATION FOR THE ACADEMIC YEAR – 2027 SHALL COMMENCE SHORTLY. 📚👨‍🎓👩‍🎓 ALL ELIGIBLE STUDENTS, PARENTS/GUARDIANS, HEADS OF SCHOOLS, SCHOOL AUTHORITIES, AND ALL OTHER CONCERNED ARE HEREBY ADVISED TO REMAIN IN READINESS FOR THE OFFICIAL COMMENCEMENT OF THE REGISTRATION PROCESS. 🏫📋 THE DETAILED REGISTRATION SCHEDULE 🗓️, ELIGIBILITY CRITERIA 📑, REGISTRATION PROCEDURE 🖥️, PRESCRIBED FEE DETAILS 💳, LIST OF REQUIRED DOCUMENTS 📂, IMPORTANT INSTRUCTIONS 📝, AND ALL OTHER RELEVANT GUIDELINES SHALL BE NOTIFIED IN DUE COURSE THROUGH THE OFFICIAL CISCE PORTAL. 🌐📖 ALL CONCERNED ARE ADVISED TO VISIT THE OFFICIAL PORTAL REGULARLY 🔄 FOR THE LATEST NOTIFICATIONS 📢, CIRCULARS 📜, PUBLIC NOTICES 📄, AND FURTHER OFFICIAL UPDATES. ⚠️ THE COUNCIL SOLICITS THE KIND CO-OPERATION OF ALL STAKEHOLDERS TOWARDS THE TIMELY, ACCURATE, AND SUCCESSFUL COMPLETION OF THE REGISTRATION PROCESS. 🤝✅ THANK YOU. 🙏";
+                document.getElementById('adminTickerInput').value = defaultFallback;
+            }
+        }
+
+        function updateLiveTickerContent() {
+            const newMsg = document.getElementById('adminTickerInput').value;
+            if(!newMsg.trim()) {
+                alert("PLEASE ENTER EMERGENCY ANNOUNCEMENT");
+                return;
+            }
+            localStorage.setItem('cisce_ticker_msg_2027', newMsg);
+            document.getElementById('ticker-object').innerText = newMsg;
+            document.getElementById('dialogue-display-body').innerText = newMsg;
+            alert("ANNOUNCEMENT RELEASED SUCCESSFULLY");
+        }
+
+        function switchView(viewId, targetButton) {
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => view.classList.remove('active-view'));
+
+            const buttons = document.querySelectorAll('#main-nav button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(viewId).classList.add('active-view');
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openAuthBox() {
+            document.getElementById('authPortalModal').style.display = 'flex';
+            document.getElementById('secretPasscode').focus();
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAuthBox();
+            }
+        });
+
+        function closeAuthBox() {
+            document.getElementById('authPortalModal').style.display = 'none';
+            document.getElementById('secretPasscode').value = '';
+        }
+
+        function verifySecureKey() {
+            const code = document.getElementById('secretPasscode').value;
+            if (code === PRIVILEGED_PASS_TOKEN) {
+                closeAuthBox();
+                isAdminAuthenticated = true;
+                
+                document.getElementById('adminControlDashboard').style.display = 'block';
+                const liveBadge = document.getElementById("live-badge-status");
+
+if (liveBadge) {
+    liveBadge.innerText = "";
+    liveBadge.style.backgroundColor = "var(--state-success-bg)";
+    liveBadge.style.color = "var(--state-success)";
+}
+                renderSavedPortalItems();
+                window.scrollTo({
+                    top: document.getElementById('adminControlDashboard').offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            } else {
+                alert("CISCE CLASS – IX BOARD CRYPTOGRAPHIC HANDSHAKE VERIFICATION HAS FAILED.");
+            }
+        }
+
+        function closeAdminDashboard() {
+            isAdminAuthenticated = false;
+            document.getElementById('adminControlDashboard').style.display = 'none';
+            const liveBadge = document.getElementById("live-badge-status");
+
+if (liveBadge) {
+    liveBadge.innerText = "";
+    liveBadge.style.backgroundColor = "var(--cisce-gold-glow)";
+    liveBadge.style.color = "var(--cisce-gold-muted)";
+}
+            resetFormState();
+            renderSavedPortalItems();
+            switchView('home-view', document.querySelectorAll('#main-nav button')[0]);
+        }
+
+        function toggleInputFieldsBasedOnTarget() {
+            const target = document.getElementById('pubTarget').value;
+            const fileBox = document.getElementById('fileUploadContainer');
+            const linkBox = document.getElementById('linkUrlContainer');
+            
+            if (target === 'result') {
+                fileBox.style.display = 'none';
+                linkBox.style.display = 'block';
+                document.getElementById('pubUrl').required = true;
+            } else {
+                fileBox.style.display = 'block';
+                linkBox.style.display = 'none';
+                document.getElementById('pubUrl').required = false;
+            }
+        }
+
+        let isPublishing = false;
+
+function executePortalPublish(event) {
+    if (event) event.preventDefault();
+
+    if (isPublishing) return;
+
+    isPublishing = true;
+    document.getElementById("mainSubmitBtn").disabled = true;
+
+    commitFormRecordToStorage(false);
+}
+
+        function saveItemAsDraft() {
+            const titleInput = document.getElementById('pubTitle').value;
+            if(!titleInput) {
+                alert("HEADLINE TEXT STRING IS REQUIRED.");
+                return;
+            }
+            commitFormRecordToStorage(true);
+        }
+
+        function commitFormRecordToStorage(isDraftMode) {
+            const target = document.getElementById('pubTarget').value;
+            const title = document.getElementById('pubTitle').value;
+            const editId = document.getElementById('editItemId').value;
+            
+            const calendarOpts = { year: 'numeric', month: 'long', day: 'numeric' };
+            const timestamp = new Date().toLocaleDateString("en-US", calendarOpts);
+
+            const record = {
+                target: target,
+                title: title,
+                date: timestamp,
+                isDraft: isDraftMode,
+                fileData: null,
+                linkUrl: null
+            };
+
+            if (editId) {
+                record.id = parseInt(editId);
+            }
+
+            const writeOperation = (blob, link) => {
+                if (blob) record.fileData = blob;
+                if (link) record.linkUrl = link;
+
+                const transaction = localDatabase.transaction(['portalItems'], 'readwrite');
+                const store = transaction.objectStore('portalItems');
+                
+                const dbRequest = editId ? store.put(record) : store.add(record);
+
+                dbRequest.onsuccess = () => {
+                isPublishing = false;
+document.getElementById("mainSubmitBtn").disabled = false;
+                    renderSavedPortalItems();
+                    resetFormState();
+                    const now = new Date();
+
+const options = {
+    timeZone: "Asia/Kolkata",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+};
+
+const parts = new Intl.DateTimeFormat("en-IN", options).formatToParts(now);
+
+let day = "", month = "", year = "";
+let hour = "", minute = "", second = "", dayPeriod = "";
+
+parts.forEach(p => {
+    if (p.type === "day") day = p.value;
+    if (p.type === "month") month = p.value.toUpperCase();
+    if (p.type === "year") year = p.value;
+    if (p.type === "hour") hour = p.value;
+    if (p.type === "minute") minute = p.value;
+    if (p.type === "second") second = p.value;
+    if (p.type === "dayPeriod") {
+        dayPeriod = p.value
+            .toUpperCase()
+            .replace("AM", "A.M.")
+            .replace("PM", "P.M.");
+    }
+});
+
+const value = `${month} ${day}, ${year} AT ${hour}:${minute}:${second} ${dayPeriod} (IST) 🌐`;
+
+localStorage.setItem("portalLastUpdated", value);
+
+document.getElementById("portalLastUpdated").innerText = value;
+                    if (target === 'pyqp') {
+                        switchView('pyqp-view', document.querySelectorAll('#main-nav button')[4]);
+                    } else {
+                        switchView('home-view', document.querySelectorAll('#main-nav button')[0]);
+                    }
+                    if (isDraftMode) {
+                        alert("DRAFT SAVED SUCCESSFULLY.");
+                    } else {
+                        alert(editId ? "UPDATED SUCCESSFULLY." : "PUBLISHED SUCCESSFULLY.");
+                    }
+                };
+            };
+
+            if (target === 'result') {
+                const url = document.getElementById('pubUrl').value;
+                writeOperation(null, url);
+            } else {
+                const fileField = document.getElementById('pubFile');
+                if (isDraftMode) {
+                    writeOperation(null, null);
+                } else if (fileField.files.length > 0) {
+                    const file = fileField.files[0];
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const blob = new Blob([e.target.result], { type: "application/pdf" });
+                        writeOperation(blob, null);
+                    };
+                    reader.readAsArrayBuffer(file);
+                } else if (editId) {
+                    const transaction = localDatabase.transaction(["portalItems"], "readonly");
+                    const store = transaction.objectStore("portalItems");
+                    store.get(parseInt(editId)).onsuccess = (e) => {
+                        const oldItem = e.target.result;
+                        writeOperation(oldItem ? oldItem.fileData : null, null);
+                    };
+                } else {
+                    writeOperation(null, null);
+                }
+            }
+        }
+
+        function getNewBadge(uploadDate){
+            const uploaded = new Date(uploadDate);
+            const today = new Date();
+            const diffDays = Math.floor((today - uploaded) / (1000 * 60 * 60 * 24));
+      if (diffDays <= 2) {
+                return '<span><span class="starburst-badge">NEW</span></span>';
+            }
+            return '';
+        }
+
+        function renderSavedPortalItems() {
+            if (!localDatabase) return;
+
+            document.querySelectorAll('.dynamic-feed-item').forEach(el => el.remove());
+            document.querySelectorAll('.scrolling-wrapper').forEach(el => el.remove());
+            
+            const trackingMetrics = {
+                'announcement-container': 0,
+                'notice-container': 0,
+                'results-container': 0,
+                'pyqp-container': 0,
+                'qp2027-container': 0
+            };
+
+            const listBuffers = {
+                'announcement-container': [],
+                'notice-container': [],
+                'results-container': [],
+                'pyqp-container': [],
+                'qp2027-container': []
+            };
+
+            const transaction = localDatabase.transaction(['portalItems'], 'readonly');
+            const store = transaction.objectStore('portalItems');
+            
+            store.openCursor(null, 'prev').onsuccess = (e) => {
+                const cursor = e.target.result;
+                if (cursor) {
+                    const item = cursor.value;
+                    let tagElement = item.isDraft ? `<span class="tag tag-draft">DRAFTED MESSAGE</span>` : "";
+                    let containerTargetId = "";
+                    let itemLinkStructure = "";
+
+                    if (item.target === 'announcement') {
+                        if(!tagElement) tagElement = `<span class="tag tag-announcement">COUNCIL COMMUNIQUÉ</span>`;
+                        containerTargetId = "announcement-container";
+                    } else if (item.target === 'notice') {
+                        if(!tagElement) tagElement = `<span class="tag tag-notice">STATUTORY NOTIFICATION</span>`;
+                        containerTargetId = "notice-container";
+                    } else if (item.target === 'pyqp') {
+                        if(!tagElement) tagElement = `<span class="tag tag-pyqp">EXAMINATION PAPERS</span>`;
+                        containerTargetId = "pyqp-container";
+                    } else if (item.target === 'qp2027') {
+                        if(!tagElement) tagElement = `<span class="tag tag-pyqp">(2027) EXAMINATION PAPERS</span>`;
+                        containerTargetId = "qp2027-container";
+                    } else {
+                        if(!tagElement) tagElement = `<span class="tag tag-result">RESULTS GATEWAY</span>`;
+                        containerTargetId = "results-container";
+                    }
+
+                    if (item.isDraft && !isAdminAuthenticated) {
+                        cursor.continue();
+                        return;
+                    }
+
+                    const htmlTargetWrapper = document.getElementById(containerTargetId);
+                    const skeletonPlaceholder = htmlTargetWrapper.querySelector('.no-data-placeholder');
+                    if (skeletonPlaceholder) {
+                        skeletonPlaceholder.remove();
+                    }
+
+                    trackingMetrics[containerTargetId]++;
+                    const listItem = document.createElement('li');
+                    listItem.className = "feed-item dynamic-feed-item";
+
+                    if (item.target === 'result' && item.linkUrl) {
+
+    itemLinkStructure = `
+        <span class="feed-title-link">
+            ${item.title} ${getNewBadge(item.date)}
+            <a href="${item.linkUrl}" target="_blank" class="mini-link">[OPEN LINK]</a>
+        </span>`;
+
+} else if (item.fileData) {
+
+    const fileObjectUrl = URL.createObjectURL(item.fileData);
+
+    itemLinkStructure = `
+        <span class="feed-title-link">
+            ${item.title} ${getNewBadge(item.date)}
+            <a href="${fileObjectUrl}" target="_blank" class="mini-link">[VIEW PDF]</a>
+        </span>`;
+
+} else {
+
+    itemLinkStructure = `
+        <span class="feed-title-link">
+            ${item.title} ${getNewBadge(item.date)}
+        </span>`;
+}
+
+                    const managementDisplayMode = isAdminAuthenticated ? 'flex' : 'none';
+
+                    listItem.innerHTML = `
+                        <div class="feed-meta">
+                            ${tagElement}
+                            <span class="item-date">${item.date}</span>
+                        </div>
+                        ${itemLinkStructure}
+                        <div class="inline-mgmt-ctrls" style="display: ${managementDisplayMode};">
+                            <button onclick="loadItemToEditForm(${item.id})" class="action-mini-btn btn-edit">MODIFY</button>
+                            <button onclick="deleteItemRecord(${item.id})" class="action-mini-btn btn-del">DELETE</button>
+                        </div>
+                    `;
+
+                    listBuffers[containerTargetId].push(listItem);
+                    cursor.continue();
+                } else {
+                    for (const containerId in listBuffers) {
+                        const hostContainer = document.getElementById(containerId);
+                        if (listBuffers[containerId].length > 0) {
+                            const scrollWrapper = document.createElement('div');
+                            scrollWrapper.className = 'scrolling-wrapper';
+                            listBuffers[containerId].forEach(node => scrollWrapper.appendChild(node));
+                            hostContainer.appendChild(scrollWrapper);
+                        }
+                    }
+                    restorePlaceholdersIfEmpty(trackingMetrics);
+                }
+            };
+        }
+
+        function restorePlaceholdersIfEmpty(metrics) {
+            const textualPlaceholders = {
+                'announcement-container': 'No announcements have been posted at this moment.',
+                'notice-container': 'No notices or circulars have been posted at this moment.',
+                'results-container': 'No live evaluation metrics are available at this moment.',
+                'pyqp-container': 'No previous years question papers have been uploaded at this moment.',
+                'qp2027-container': 'No (2027) question papers have been uploaded at this moment.'
+            };
+
+            for (const key in metrics) {
+                const hostContainer = document.getElementById(key);
+                if (metrics[key] === 0 && !hostContainer.querySelector('.no-data-placeholder')) {
+                    const el = document.createElement('li');
+                    el.className = 'no-data-placeholder';
+                    el.innerText = textualPlaceholders[key];
+                    hostContainer.appendChild(el);
+                }
+            }
+        }
+
+        function loadItemToEditForm(itemId) {
+            const transaction = localDatabase.transaction(['portalItems'], 'readonly');
+            const store = transaction.objectStore('portalItems');
+            
+            store.get(itemId).onsuccess = (e) => {
+                const item = e.target.result;
+                if (item) {
+                    document.getElementById('editItemId').value = item.id;
+                    document.getElementById('pubTarget').value = item.target;
+                    document.getElementById('pubTitle').value = item.title;
+                    
+                    toggleInputFieldsBasedOnTarget();
+                    
+                    if (item.target === 'result') {
+                        document.getElementById('pubUrl').value = item.linkUrl || '';
+                    }
+
+                    document.getElementById('mainSubmitBtn').innerText = "💾 UPDATE ENTRY 💾";
+                    document.getElementById('cancelEditBtn').style.display = "inline-block";
+                    
+                    window.scrollTo({
+                        top: document.getElementById('adminControlDashboard').offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            };
+        }
+
+        function deleteItemRecord(itemId) {
+            if (confirm("ARE YOU SURE ❓DO YOU WANT TO DELETE THIS ITEM FROM THE WEBSITE❓")) {
+                const transaction = localDatabase.transaction(['portalItems'], 'readwrite');
+                const store = transaction.objectStore('portalItems');
+                store.delete(itemId).onsuccess = () => {
+                    renderSavedPortalItems();
+                    alert("RECORD PERMANENTLY DELETED FROM THE DATABASE.");
+                };
+            }
+        }
+
+        function resetFormState() {
+            document.getElementById('postingForm').reset();
+            document.getElementById('editItemId').value = '';
+            document.getElementById('mainSubmitBtn').innerText = "📠 PUBLISH 📠";
+            document.getElementById('cancelEditBtn').style.display = "none";
+            toggleInputFieldsBasedOnTarget();
+        }
+
+        function clearAllData() {
+            if (confirm("WARNING: THIS WILL CLEAR ALL CUSTOM DATA STORED IN THIS TERMINAL. CONTINUE THIS REQUEST ❓❓")) {
+                const transaction = localDatabase.transaction(['portalItems'], 'readwrite');
+                const store = transaction.objectStore('portalItems');
+                store.clear().onsuccess = () => {
+                    localStorage.removeItem('cisce_ticker_msg_2027');
+                    loadSavedTickerText();
+                    renderSavedPortalItems();
+                    alert("FINAL DATABASE RESET HAS BEEN COMPLETED SUCCESSFULLY.");
+                };
+            }
+        }
+    </script>
+    <script>
+// Disable right-click
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// Disable text selection
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// Disable dragging
+document.addEventListener("dragstart", e => e.preventDefault());
+
+// Disable copy, cut and paste
+["copy","cut","paste"].forEach(event=>{
+    document.addEventListener(event,e=>e.preventDefault());
+});
+
+// Disable keyboard shortcuts
+document.addEventListener("keydown",function(e){
+
+    // F12
+    if(e.key==="F12"){
+        e.preventDefault();
+        return;
+    }
+
+    // Ctrl shortcuts
+    if(e.ctrlKey){
+        const key=e.key.toLowerCase();
+
+        if(["a","c","x","v","u","s","p"].includes(key)){
+            e.preventDefault();
+            return;
+        }
+    }
+
+    // Ctrl + Shift + I / J / C
+    if(
+        e.ctrlKey &&
+        e.shiftKey &&
+        ["I","J","C"].includes(e.key)
+    ){
+        e.preventDefault();
+    }
+
+});
+function savePortalUpdateTime(){
+
+    const date = document.getElementById("adminUpdateDate").value;
+    const time = document.getElementById("adminUpdateTime").value;
+
+    if(date === "" || time === ""){
+        alert("SELECT DATE AND TIME");
+        return;
+    }
+
+    const now = new Date(date + "T" + time + ":00");
+
+    const options = {
+        timeZone: "Asia/Kolkata",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    };
+
+    const parts = new Intl.DateTimeFormat("en-IN", options).formatToParts(now);
+
+    let day="", month="", year="";
+    let hour="", minute="", second="", dayPeriod="";
+
+    parts.forEach(p=>{
+        if(p.type==="day") day=p.value;
+        if(p.type==="month") month=p.value.toUpperCase();
+        if(p.type==="year") year=p.value;
+        if(p.type==="hour") hour=p.value;
+        if(p.type==="minute") minute=p.value;
+        if(p.type==="second") second=p.value;
+        if(p.type==="dayPeriod"){
+            dayPeriod=p.value.toUpperCase()
+                .replace("AM","A.M.")
+                .replace("PM","P.M.");
+        }
+    });
+
+    const value = `${month} ${day}, ${year} AT ${hour}:${minute}:${second} ${dayPeriod} (IST) 🌐`;
+
+    localStorage.setItem("portalLastUpdated", value);
+
+    const lastUpdated = document.getElementById("portalLastUpdated");
+
+if (lastUpdated) {
+    lastUpdated.innerText = value;
+}
+
+    alert("PORTAL LAST UPDATED CHANGED SUCCESSFULLY.");
+}
+window.addEventListener("load",function(){
+
+    const value=localStorage.getItem("portalLastUpdated");
+
+    if(value){
+
+        const lastUpdated = document.getElementById("portalLastUpdated");
+
+if (lastUpdated) {
+    lastUpdated.innerText = value;
+}
+
+    }
+
+});
+checkMaintenanceMode();
+
+setInterval(checkMaintenanceMode,1000);
+let maintenanceHoldTimer;
+
+function startHoldMaintenance(){
+
+    maintenanceHoldTimer = setTimeout(function(){
+
+        disableMaintenance();
+
+    }, 20000); // 20 seconds
+
+}
+
+function cancelHoldMaintenance(){
+
+    clearTimeout(maintenanceHoldTimer);
+
+}
+let dashboardHoldTimer = null;
+
+function startDashboardHold() {
+
+    dashboardHoldTimer = setTimeout(function () {
+
+        openAuthBox();
+
+    }, 20000); // 20 seconds
+
+}
+
+function cancelDashboardHold() {
+
+    clearTimeout(dashboardHoldTimer);
+
+}
+function hideWebsiteByTime() {
+
+    const now = new Date();
+
+    // Hide from 05 August 2026 00:00:00 to 05 August 2026 06:00:00 (local time)
+    const hideStart = new Date(2026, 7, 4, 0, 0, 0);
+    const hideEnd   = new Date(2026, 7, 5, 0, 0, 0);
+
+    const blocker = document.getElementById("websiteBlocker");
+
+    if (!blocker) return;
+
+    if (now >= hideStart && now < hideEnd) {
+        blocker.style.display = "block";
+    } else {
+        blocker.style.display = "none";
+    }
+}
+
+// Run immediately
+hideWebsiteByTime();
+
+// Check every second
+setInterval(hideWebsiteByTime, 1000);
+</script>
+</div>
+</body>
+</html>
