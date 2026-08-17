@@ -1674,7 +1674,7 @@ SAVE LAST UPDATED TIMELINE
     <h3>🗓️ REGISTRATION BEGINS ON</h3>
 
     <div style="font-size:20px;font-weight:800;color:#064e3b;margin-bottom:5px;">
-        AUGUST 11, 2026 AT 10:00:00 A.M.
+        AUGUST 18, 2026 AT 10:00:00 A.M.
     </div>
 
     <div id="count_reg_start" class="countdown"></div>
@@ -1685,7 +1685,7 @@ SAVE LAST UPDATED TIMELINE
     <h3 style="margin-top:15px;">🗓️ REGISTRATION CLOSES AT</h3>
 
     <div style="font-size:20px;font-weight:800;color:#064e3b;margin-bottom:5px;">
-        SEPTEMBER 15, 2026 AT 11:59:59 P.M.
+        SEPTEMBER 30, 2026 AT 11:59:59 P.M.
     </div>
 
     <div id="count1" class="countdown"></div>
@@ -3298,7 +3298,7 @@ function disableMaintenance(){
 // TRUE  = REGISTRATION POSTPONED
 // FALSE = ORIGINAL COUNTDOWN ENABLED
 
-let registrationPostponed = true;
+let registrationPostponed = false;
         function startCountdowns() {
 
     // ==========================================
@@ -3343,11 +3343,11 @@ let registrationPostponed = true;
 
     // REGISTRATION START
     const regStart =
-        new Date("August 11, 2026 09:59:59").getTime();
+        new Date("August 18, 2026 09:59:59").getTime();
 
     // REGISTRATION CLOSE
     const target1 =
-        new Date("September 15, 2026 23:59:59").getTime();
+        new Date("September 30, 2026 23:59:59").getTime();
 
     setInterval(() => {
         const now = new Date().getTime();
